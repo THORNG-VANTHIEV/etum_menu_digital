@@ -21,7 +21,7 @@ describe('T03 — App Shell and Routing', () => {
         </MemoryRouter>
       </LanguageProvider>
     );
-    expect(screen.getByText(/រសជាតិពិតនៃម្ហូប និងភេសជ្ជៈខ្មែរ/i)).toBeInTheDocument();
+    expect(screen.getByText(/លៀសអប់ ខ្យង ងាវ រសជាតិខ្មែរពិតៗ/i)).toBeInTheDocument();
   });
 
   it('renders Menu page at /menu route', () => {

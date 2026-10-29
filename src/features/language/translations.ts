@@ -4,8 +4,8 @@ export const uiTranslations = {
     en: 'E-tum LeasAob Siem Reap',
   },
   appTagline: {
-    km: 'Cafe & Restaurant',
-    en: 'Cafe & Restaurant',
+    km: 'លៀសអប់ និងអាហារសម្រន់',
+    en: 'Steamed Clams & Snacks',
   },
   home: {
     km: 'ទំព័រដើម',
@@ -20,12 +20,12 @@ export const uiTranslations = {
     en: 'Welcome',
   },
   heroTitle: {
-    km: 'រសជាតិពិតនៃម្ហូប និងភេសជ្ជៈខ្មែរ',
-    en: 'Authentic Taste of Khmer Cuisine & Drinks',
+    km: 'លៀសអប់ ខ្យង ងាវ រសជាតិខ្មែរពិតៗ',
+    en: 'Steamed Clams, Snails & Cockles with True Khmer Flavor',
   },
   heroSubtitle: {
-    km: 'ម្ហូបខ្មែរឈ្ងុយឆ្ងាញ់ កាហ្វេស្រស់ និងភេសជ្ជៈសម្រិតសម្រាំងយ៉ាងយកចិត្តទុកដាក់នៅខេត្តសៀមរាប។',
-    en: 'Delicious Khmer food, freshly brewed coffee, and craft beverages prepared with care in Siem Reap.',
+    km: 'លៀស ខ្យង ងាវ បង្កង និងក្ដាម អប់គ្រឿង អប់អំពិលម្ទេស ឬស្ងោរ ព្រមទាំងស្លាបមាន់បំពង សាច់គោជ្រនួចអាំង និងប្រហិត នៅខេត្តសៀមរាប។',
+    en: 'Clams, snails, cockles, river prawns and field crabs, steamed with spices or tamarind chili, or boiled, plus fried chicken wings, grilled beef skewers and meatballs in Siem Reap.',
   },
   viewFullMenu: {
     km: 'មើលបញ្ជីមុខម្ហូបទាំងអស់',
@@ -128,8 +128,8 @@ export const uiTranslations = {
     en: 'Home',
   },
   footerDescription: {
-    km: 'ម្ហូបខ្មែរឆ្ងាញ់ពិសា និងភេសជ្ជៈស្រស់ថ្លា • ក្រុងសៀមរាប',
-    en: 'Authentic Khmer food & refreshing beverages • Siem Reap',
+    km: 'លៀសអប់ ខ្យង ងាវ និងអាហារសម្រន់ • ក្រុងសៀមរាប',
+    en: 'Steamed clams, snails, cockles & snacks • Siem Reap',
   },
   digitalMenuCopyright: {
     km: 'ម៉ឺនុយឌីជីថល',

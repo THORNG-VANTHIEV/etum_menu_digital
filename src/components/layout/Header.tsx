@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
         >
           <img
             src="./images/branding/e_tum_icon.webp"
-            alt="Cafe Logo"
+            alt=""
             className="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0 shadow-xs"
           />
           <div className="flex flex-col min-w-0">
