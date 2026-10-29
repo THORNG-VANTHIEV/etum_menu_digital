@@ -50,9 +50,10 @@ export const HomePage: React.FC = () => {
             </div>
             <Link
               to="/menu"
-              className="text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-900 underline underline-offset-4"
+              className="text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 transition-colors flex items-center space-x-1"
             >
-              {t('viewAll')} &rarr;
+              <span>{t('viewAll')}</span>
+              <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
 
@@ -95,8 +96,9 @@ export const HomePage: React.FC = () => {
                       <span className="font-extrabold text-amber-950 text-sm">
                         {item.priceUsd !== undefined ? `$${item.priceUsd.toFixed(2)}` : t('hasVariants')}
                       </span>
-                      <span className="text-amber-700 font-semibold group-hover:underline">
-                        {t('viewDetails')} &rarr;
+                      <span className="text-amber-700 font-bold group-hover:text-amber-950 transition-colors flex items-center space-x-1">
+                        <span>{t('viewDetails')}</span>
+                        <span aria-hidden="true" className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
                       </span>
                     </div>
                   </div>

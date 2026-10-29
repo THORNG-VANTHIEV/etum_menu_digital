@@ -92,9 +92,9 @@ export const MenuCard: React.FC<MenuCardProps> = ({
           <span className="font-extrabold text-amber-950 text-sm">
             {priceDisplay}
           </span>
-          <span className="font-semibold text-amber-700 group-hover:underline flex items-center space-x-1">
+          <span className="font-bold text-amber-700 group-hover:text-amber-950 flex items-center space-x-1 transition-colors">
             <span>{locale === 'km' ? 'មើលលម្អិត' : 'Details'}</span>
-            <span aria-hidden="true">&rarr;</span>
+            <span aria-hidden="true" className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
           </span>
         </div>
       </div>
