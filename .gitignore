@@ -7,3 +7,7 @@ coverage
 .idea
 .vscode
 
+
+# Original PNG sources (kept locally, replaced by .webp in the app)
+public/images/menu/*.png
+public/images/branding/restaurant-banner.png

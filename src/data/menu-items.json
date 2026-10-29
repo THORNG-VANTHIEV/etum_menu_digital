@@ -12,7 +12,7 @@
     },
     "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/ETum_Foods (2).png"
+      "/images/menu/ETum_Foods (2).webp"
     ],
     "available": true,
     "featured": true,
@@ -31,7 +31,7 @@
     },
     "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/ETum_Foods (4).png"
+      "/images/menu/ETum_Foods (4).webp"
     ],
     "available": true,
     "featured": true,
@@ -50,7 +50,7 @@
     },
     "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/ETum_Foods (3).png"
+      "/images/menu/ETum_Foods (3).webp"
     ],
     "available": true,
     "featured": true,
@@ -69,7 +69,7 @@
     },
     "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/ETum_Foods (12).png"
+      "/images/menu/ETum_Foods (12).webp"
     ],
     "available": true,
     "priceUsd": 1.75
@@ -87,7 +87,7 @@
     },
     "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/ETum_Foods (11).png"
+      "/images/menu/ETum_Foods (11).webp"
     ],
     "available": true,
     "variants": [
@@ -124,7 +124,7 @@
     },
     "categoryId": "cat-steamed-tamarind",
     "images": [
-      "/images/menu/ETum_Foods (8).png"
+      "/images/menu/ETum_Foods (8).webp"
     ],
     "available": true,
     "featured": true,
@@ -143,7 +143,7 @@
     },
     "categoryId": "cat-steamed-tamarind",
     "images": [
-      "/images/menu/ETum_Foods (9).png"
+      "/images/menu/ETum_Foods (9).webp"
     ],
     "available": true,
     "featured": true,
@@ -162,7 +162,7 @@
     },
     "categoryId": "cat-steamed-tamarind",
     "images": [
-      "/images/menu/ETum_Foods (10).png"
+      "/images/menu/ETum_Foods (10).webp"
     ],
     "available": true,
     "priceUsd": 1.75
@@ -180,7 +180,7 @@
     },
     "categoryId": "cat-steamed-tamarind",
     "images": [
-      "/images/menu/ETum_Foods (13).png"
+      "/images/menu/ETum_Foods (13).webp"
     ],
     "available": true,
     "variants": [
@@ -217,7 +217,7 @@
     },
     "categoryId": "cat-boiled",
     "images": [
-      "/images/menu/ETum_Foods (14).png"
+      "/images/menu/ETum_Foods (14).webp"
     ],
     "available": true,
     "priceUsd": 1.75
@@ -235,7 +235,7 @@
     },
     "categoryId": "cat-boiled",
     "images": [
-      "/images/menu/ETum_Foods (15).png"
+      "/images/menu/ETum_Foods (15).webp"
     ],
     "available": true,
     "priceUsd": 1.75
@@ -253,7 +253,7 @@
     },
     "categoryId": "cat-boiled",
     "images": [
-      "/images/menu/ETum_Foods (16).png"
+      "/images/menu/ETum_Foods (16).webp"
     ],
     "available": true,
     "priceUsd": 2.5
@@ -271,7 +271,7 @@
     },
     "categoryId": "cat-boiled",
     "images": [
-      "/images/menu/ETum_Foods (17).png"
+      "/images/menu/ETum_Foods (17).webp"
     ],
     "available": true,
     "featured": true,
@@ -290,7 +290,7 @@
     },
     "categoryId": "cat-fried-grilled",
     "images": [
-      "/images/menu/ETum_Foods (1).png"
+      "/images/menu/ETum_Foods (1).webp"
     ],
     "available": true,
     "featured": true,
@@ -309,7 +309,7 @@
     },
     "categoryId": "cat-fried-grilled",
     "images": [
-      "/images/menu/ETum_Foods (5).png"
+      "/images/menu/ETum_Foods (5).webp"
     ],
     "available": true,
     "priceUsd": 2.5
@@ -327,7 +327,7 @@
     },
     "categoryId": "cat-fried-grilled",
     "images": [
-      "/images/menu/ETum_Foods (6).png"
+      "/images/menu/ETum_Foods (6).webp"
     ],
     "available": true,
     "priceUsd": 0.625
@@ -345,7 +345,7 @@
     },
     "categoryId": "cat-fried-grilled",
     "images": [
-      "/images/menu/ETum_Foods (18).png"
+      "/images/menu/ETum_Foods (18).webp"
     ],
     "available": true,
     "variants": [
@@ -382,7 +382,7 @@
     },
     "categoryId": "cat-fried-grilled",
     "images": [
-      "/images/menu/ETum_Foods (7).png"
+      "/images/menu/ETum_Foods (7).webp"
     ],
     "available": true,
     "priceUsd": 2.5
