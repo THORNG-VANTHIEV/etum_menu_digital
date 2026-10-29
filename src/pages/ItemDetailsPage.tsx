@@ -80,11 +80,11 @@ export const ItemDetailsPage: React.FC = () => {
       {/* Main Item Card */}
       <div className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2">
         {/* Item Image */}
-        <div className="aspect-[4/3] md:aspect-auto bg-stone-100 relative overflow-hidden">
+        <div className="aspect-[4/3] md:aspect-auto bg-stone-50 relative overflow-hidden flex items-center justify-center p-4 sm:p-8">
           <ImageWithFallback
             src={item.images[0]}
             alt={primaryName}
-            className="w-full h-full object-cover"
+            className="w-full h-full max-h-[380px] object-contain drop-shadow-md"
           />
           {!isParentAvailable && (
             <div className="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow backdrop-blur flex items-center space-x-1.5">

@@ -69,11 +69,11 @@ export const HomePage: React.FC = () => {
                   className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
                   aria-label={`${primaryName} - ${item.available ? 'Available' : 'Sold Out'}`}
                 >
-                  <div className="aspect-[4/3] bg-stone-100 overflow-hidden relative">
+                  <div className="aspect-[4/3] bg-stone-50 overflow-hidden relative flex items-center justify-center p-2.5 sm:p-3">
                     <ImageWithFallback
                       src={item.images[0]}
                       alt={primaryName}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
                     />
                     {!item.available && (
                       <div className="absolute top-2 right-2 bg-stone-900/85 text-white text-[11px] font-bold px-2 py-0.5 rounded backdrop-blur">

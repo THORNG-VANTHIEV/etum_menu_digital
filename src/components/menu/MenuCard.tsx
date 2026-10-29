@@ -54,11 +54,11 @@ export const MenuCard: React.FC<MenuCardProps> = ({
       aria-label={`${primaryName} - ${priceDisplay} - ${item.available ? 'Available' : 'Unavailable'}`}
     >
       {/* Thumbnail */}
-      <div className="aspect-[16/10] bg-stone-100 overflow-hidden relative">
+      <div className="aspect-[16/10] bg-stone-50 overflow-hidden relative flex items-center justify-center p-2 sm:p-3">
         <ImageWithFallback
           src={item.images[0]}
           alt={primaryName}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-xs"
         />
         {!item.available && (
           <div className="absolute inset-0 bg-stone-900/40 backdrop-blur-[1px] flex items-center justify-center p-2 text-center">
