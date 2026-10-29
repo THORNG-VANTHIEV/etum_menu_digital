@@ -1,0 +1,185 @@
+[
+  {
+    "id": "item-espresso",
+    "slug": "espresso",
+    "name": {
+      "km": "កាហ្វេអេសប្រេសសូ",
+      "en": "Espresso"
+    },
+    "description": {
+      "km": "កាហ្វេខ្មៅស្រស់ ក្លិនឈ្ងុយ និងរសជាតិដិតជាប់មាត់",
+      "en": "Rich and bold single-origin espresso shot"
+    },
+    "categoryId": "cat-coffee",
+    "images": [
+      "/images/menu/espresso.svg"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 2.0
+  },
+  {
+    "id": "item-iced-latte",
+    "slug": "iced-latte",
+    "name": {
+      "km": "ឡាតេទឹកកក",
+      "en": "Iced Latte"
+    },
+    "description": {
+      "km": "កាហ្វេឡាតេទឹកកក ជាមួយទឹកដោះគោស្រស់មានរសជាតិផ្អែមស្រទន់",
+      "en": "Espresso with fresh chilled milk and ice"
+    },
+    "categoryId": "cat-coffee",
+    "images": [
+      "/images/menu/iced-latte.svg"
+    ],
+    "available": true,
+    "featured": true,
+    "variants": [
+      {
+        "id": "regular",
+        "name": {
+          "km": "កែវធម្មតា",
+          "en": "Regular"
+        },
+        "available": true,
+        "priceUsd": 2.75
+      },
+      {
+        "id": "large",
+        "name": {
+          "km": "កែវធំ",
+          "en": "Large"
+        },
+        "available": true,
+        "priceUsd": 3.5
+      }
+    ]
+  },
+  {
+    "id": "item-green-tea",
+    "slug": "green-tea",
+    "name": {
+      "km": "តែបៃតងធម្មជាតិ",
+      "en": "Natural Green Tea"
+    },
+    "description": {
+      "km": "តែបៃតងស្រស់គុណភាពខ្ពស់ ផ្តល់ថាមពលនិងសុខភាព",
+      "en": "High mountain premium steamed green tea"
+    },
+    "categoryId": "cat-tea",
+    "images": [
+      "/images/menu/green-tea.svg"
+    ],
+    "available": true,
+    "variants": [
+      {
+        "id": "hot",
+        "name": {
+          "km": "ក្តៅ",
+          "en": "Hot"
+        },
+        "available": true,
+        "priceUsd": 2.25
+      },
+      {
+        "id": "cold",
+        "name": {
+          "km": "ត្រជាក់",
+          "en": "Cold"
+        },
+        "available": false,
+        "priceUsd": 2.75
+      }
+    ]
+  },
+  {
+    "id": "item-passion-juice",
+    "slug": "passion-juice",
+    "name": {
+      "km": "ទឹកក្រូចឆ្មារផាសិន",
+      "en": "Passion Fruit Juice"
+    },
+    "description": {
+      "km": "ទឹកផាសិនស្រស់ជូរអែម ជួយបំបាត់ការស្រេកទឹក",
+      "en": "Freshly squeezed sweet and sour passion fruit"
+    },
+    "categoryId": "cat-tea",
+    "images": [
+      "/images/menu/passion-juice.svg"
+    ],
+    "available": false,
+    "variants": [
+      {
+        "id": "regular",
+        "name": {
+          "km": "ធម្មតា",
+          "en": "Regular"
+        },
+        "available": true,
+        "priceUsd": 2.5
+      },
+      {
+        "id": "large",
+        "name": {
+          "km": "ធំ",
+          "en": "Large"
+        },
+        "available": true,
+        "priceUsd": 3.25
+      }
+    ]
+  },
+  {
+    "id": "item-croissant",
+    "slug": "croissant",
+    "name": {
+      "km": "នំប៉័ងក្រូសង់ប៊ឺរ",
+      "en": "Butter Croissant"
+    },
+    "description": {
+      "km": "នំប៉័ងដុតក្តៅៗ ស្រួយក្រៅទន់ក្នុង ជាមួយប៊ឺរប្រណិត"
+    },
+    "categoryId": "cat-food",
+    "images": [
+      "/images/menu/croissant.svg"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-sandwich",
+    "slug": "club-sandwich",
+    "name": {
+      "km": "ក្លឹបសាំងវិច",
+      "en": "Club Sandwich"
+    },
+    "description": {
+      "km": "សាំងវិចសាច់មាន់ បន្លែស្រស់ និងឈីសបន្ទះ",
+      "en": "Triple-decker sandwich with chicken, fresh greens, and cheese"
+    },
+    "categoryId": "cat-food",
+    "images": [
+      "/images/menu/club-sandwich.svg"
+    ],
+    "available": false,
+    "priceUsd": 4.5
+  },
+  {
+    "id": "item-cheesecake",
+    "slug": "cheesecake",
+    "name": {
+      "km": "នំខេកឈីសស្ត្រប៊ឺរី"
+    },
+    "description": {
+      "km": "នំខេកឈីសទន់ម៉ត់ ជាមួយទឹកស្ត្រប៊ឺរីផ្អែមស្រទន់"
+    },
+    "categoryId": "cat-dessert",
+    "images": [
+      "/images/menu/cheesecake.svg"
+    ],
+    "available": true,
+    "priceUsd": 3.5
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "defaultLocale": "km",
+  "supportedLocales": ["km", "en"],
+  "currency": {
+    "baseCurrency": "USD",
+    "displayCurrencies": ["USD", "KHR"],
+    "exchangeRateKhrPerUsd": null,
+    "roundingRule": null
+  },
+  "branding": {
+    "restaurantName": null,
+    "logoPath": "/images/branding/logo.svg",
+    "faviconPath": "/favicon.ico"
+  }
+}

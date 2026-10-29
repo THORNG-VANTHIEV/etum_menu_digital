@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "validate": "tsx scripts/validate-menu-data.ts"
+    "validate": "tsx scripts/validate-menu-data.ts",
+    "validate:prod": "tsx scripts/validate-menu-data.ts --production"
   },
   "dependencies": {
     "react": "^18.3.1",

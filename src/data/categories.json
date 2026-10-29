@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cat-coffee",
+    "slug": "coffee",
+    "name": {
+      "km": "កាហ្វេ",
+      "en": "Coffee"
+    },
+    "sortOrder": 1,
+    "active": true
+  },
+  {
+    "id": "cat-tea",
+    "slug": "tea-drinks",
+    "name": {
+      "km": "តែ និងភេសជ្ជៈ",
+      "en": "Tea & Drinks"
+    },
+    "sortOrder": 2,
+    "active": true
+  },
+  {
+    "id": "cat-food",
+    "slug": "food",
+    "name": {
+      "km": "អាហារសម្រន់",
+      "en": "Food & Snacks"
+    },
+    "sortOrder": 3,
+    "active": true
+  },
+  {
+    "id": "cat-dessert",
+    "slug": "desserts",
+    "name": {
+      "km": "បង្អែម",
+      "en": "Desserts"
+    },
+    "sortOrder": 4,
+    "active": true
+  },
+  {
+    "id": "cat-seasonal",
+    "slug": "seasonal",
+    "name": {
+      "km": "ពិសេសតាមរដូវកាល",
+      "en": "Seasonal Specials"
+    },
+    "sortOrder": 5,
+    "active": false
+  }
+]
