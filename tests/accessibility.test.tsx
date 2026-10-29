@@ -96,7 +96,7 @@ describe('T10 — Accessibility and Usability Verification', () => {
     const cardLink = screen.getByRole('link');
     expect(cardLink).toHaveAttribute('aria-label');
     expect(cardLink.getAttribute('aria-label')).toContain('Unavailable');
-    expect(screen.getByText(/អស់ពីស្តុក/i)).toBeInTheDocument();
+    expect(screen.getByText('អស់ពីស្តុក')).toBeInTheDocument();
   });
 
   it('ensures header has accessible landmarks and a labelled language toggle', () => {

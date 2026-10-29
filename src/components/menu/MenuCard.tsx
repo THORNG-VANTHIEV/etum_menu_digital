@@ -4,6 +4,7 @@ import type { MenuItem, SiteCurrencyConfig, Locale } from '../../types/menu';
 import ImageWithFallback from '../common/ImageWithFallback';
 import Badge from '../common/Badge';
 import { CurrencyService } from '../../domain/currency/currencyService';
+import { uiTranslations } from '../../features/language/translations';
 
 interface MenuCardProps {
   item: MenuItem;
@@ -26,7 +27,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
   // Price (variant items show the lowest variant price as a starting price)
   const price = CurrencyService.formatItemPrice(item, currencyConfig);
   const priceDisplay = price
-    ? `${price.isStartingPrice ? `${locale === 'km' ? 'ចាប់ពី' : 'From'} ` : ''}${price.formatted}`
+    ? `${price.isStartingPrice ? `${uiTranslations.fromPrice[locale]} ` : ''}${price.formatted}`
     : '';
 
   return (
@@ -47,7 +48,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
         {!item.available && (
           <div className="absolute inset-0 bg-stone-900/40 backdrop-blur-[1px] flex items-center justify-center p-2 text-center">
             <Badge variant="warning" className="shadow-md">
-              {locale === 'km' ? 'អស់ពីស្តុក / Unavailable' : 'Out of Stock'}
+              {uiTranslations.soldOut[locale]}
             </Badge>
           </div>
         )}
@@ -77,8 +78,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
             {priceDisplay}
           </span>
           <span className="font-bold text-amber-700 group-hover:text-amber-950 flex items-center space-x-1 transition-colors">
-            <span>{locale === 'km' ? 'មើលលម្អិត' : 'Details'}</span>
-            <span aria-hidden="true" className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+            <span>{uiTranslations.viewDetails[locale]}</span>
           </span>
         </div>
       </div>

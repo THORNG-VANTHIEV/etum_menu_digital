@@ -53,6 +53,8 @@ describe('T08 — Details Pages and Variants', () => {
     expect(screen.getByRole('heading', { name: 'ប្រហិតសាច់គោអប់' })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: /ចានតូច/i })).toBeInTheDocument();
     expect(screen.getByRole('radio', { name: /ចានធំ/i })).toBeInTheDocument();
+    // Size label comes from the translations, without mixed-in English
+    expect(screen.getByText('ជ្រើសរើសទំហំ:')).toBeInTheDocument();
 
     // Default regular is selected -> $1.25
     expect(screen.getByTestId('total-price')).toHaveTextContent('$1.25');

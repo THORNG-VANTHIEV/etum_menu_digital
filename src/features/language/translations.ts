@@ -63,6 +63,10 @@ export const uiTranslations = {
     km: 'មើលទាំងអស់',
     en: 'View All',
   },
+  menuSubtitle: {
+    km: 'មុខម្ហូបអប់ ស្ងោរ បំពង និងភេសជ្ជៈ',
+    en: 'Steamed, boiled and fried dishes, plus drinks',
+  },
   searchPlaceholder: {
     km: 'ស្វែងរកឈ្មោះមុខម្ហូប...',
     en: 'Search menu items...',

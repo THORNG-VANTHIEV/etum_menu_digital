@@ -48,7 +48,7 @@ export const MenuPage: React.FC = () => {
             {t('menu')}
           </h1>
           <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            {locale === 'km' ? 'បញ្ជីមុខម្ហូប និងភេសជ្ជៈស្រស់ៗ' : 'Full Menu & Beverage Selection'}
+            {t('menuSubtitle')}
           </p>
         </div>
 

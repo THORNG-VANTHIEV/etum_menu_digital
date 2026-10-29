@@ -104,7 +104,6 @@ export const HomePage: React.FC = () => {
                       </span>
                       <span className="text-amber-700 font-bold group-hover:text-amber-950 transition-colors flex items-center space-x-1">
                         <span>{t('viewDetails')}</span>
-                        <span aria-hidden="true" className="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
                       </span>
                     </div>
                   </div>

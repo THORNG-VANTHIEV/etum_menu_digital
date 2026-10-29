@@ -1,6 +1,7 @@
 import React from 'react';
 import type { MenuVariant, Locale, SiteCurrencyConfig } from '../../types/menu';
 import { CurrencyService } from '../../domain/currency/currencyService';
+import { uiTranslations } from '../../features/language/translations';
 
 interface VariantSelectorProps {
   variants: MenuVariant[];
@@ -22,7 +23,7 @@ export const VariantSelector: React.FC<VariantSelectorProps> = ({
   return (
     <div className="space-y-3">
       <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
-        {locale === 'km' ? 'ជ្រើសរើសទំហំ (Select Size):' : 'Select Size:'}
+        {uiTranslations.selectSize[locale]}
       </label>
 
       <div
