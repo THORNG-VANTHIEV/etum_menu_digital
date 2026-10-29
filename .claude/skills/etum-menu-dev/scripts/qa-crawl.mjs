@@ -1,4 +1,4 @@
-// QA crawl of the E-tum menu in headless Chrome via the DevTools protocol.
+// QA crawl of the E Tum menu in headless Chrome via the DevTools protocol.
 // Usage: node qa-crawl.mjs <baseUrl> <outDir> [--quick]
 //   baseUrl: http://127.0.0.1:5173 or https://thorng-vanthiev.github.io/etum_menu_digital
 //   --quick: phone + desktop, Khmer only (faster)

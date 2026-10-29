@@ -1,9 +1,9 @@
 ---
 name: etum-menu-dev
-description: How to run, change, verify and deploy the E-tum LeasAob Siem Reap digital menu (React + Vite + Tailwind, GitHub Pages at thorng-vanthiev.github.io/etum_menu_digital). Use this skill for ANY work in this repo — starting the dev server, editing menu items/prices/images/translations, UI or styling changes, fixing display bugs, running tests, checking the live site, or committing and pushing a deploy — even when the request is short or in Khmer (e.g. "run project", "កែ...", "commit and push", "ពិនិត្យមើលបញ្ហា").
+description: How to run, change, verify and deploy the E Tum Leas Ob Siem Reap digital menu (React + Vite + Tailwind, GitHub Pages at thorng-vanthiev.github.io/etum_menu_digital). Use this skill for ANY work in this repo — starting the dev server, editing menu items/prices/images/translations, UI or styling changes, fixing display bugs, running tests, checking the live site, or committing and pushing a deploy — even when the request is short or in Khmer (e.g. "run project", "កែ...", "commit and push", "ពិនិត្យមើលបញ្ហា").
 ---
 
-# E-tum digital menu — development guide
+# E Tum digital menu — development guide
 
 A bilingual (Khmer default, English) restaurant menu. Static site: local JSON data, no backend.
 Live: https://thorng-vanthiev.github.io/etum_menu_digital/ — repo `THORNG-VANTHIEV/etum_menu_digital`, branch `main`.
