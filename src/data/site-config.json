@@ -4,8 +4,8 @@
   "currency": {
     "baseCurrency": "USD",
     "displayCurrencies": ["USD", "KHR"],
-    "exchangeRateKhrPerUsd": null,
-    "roundingRule": null
+    "exchangeRateKhrPerUsd": 4000,
+    "roundingRule": "round_to_100"
   },
   "branding": {
     "restaurantName": "E-tum LeasAob Siem Reap",
@@ -13,4 +13,3 @@
     "faviconPath": "/favicon.ico"
   }
 }
-

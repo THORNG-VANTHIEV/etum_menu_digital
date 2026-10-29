@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#fef2f2"/>
+  <circle cx="200" cy="150" r="90" fill="#ef4444" opacity="0.15"/>
+  <!-- Soda Can -->
+  <rect x="160" y="80" width="80" height="15" rx="5" fill="#9ca3af"/>
+  <rect x="155" y="95" width="90" height="135" rx="10" fill="#dc2626"/>
+  <rect x="160" y="230" width="80" height="10" rx="4" fill="#9ca3af"/>
+  <!-- Wave ribbon -->
+  <path d="M155 160 Q200 130 245 160 L245 175 Q200 145 155 175 Z" fill="#ffffff" opacity="0.9"/>
+  <text x="200" y="145" font-size="20" font-weight="900" font-style="italic" fill="#ffffff" text-anchor="middle" font-family="serif">Cola</text>
+</svg>

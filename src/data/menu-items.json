@@ -1,186 +1,426 @@
 [
   {
-    "id": "item-espresso",
-    "slug": "espresso",
+    "id": "item-leas-aob",
+    "slug": "leas-aob",
     "name": {
-      "km": "កាហ្វេអេសប្រេសសូ",
-      "en": "Espresso"
+      "km": "លៀសអប់",
+      "en": "Steamed Clams with Spices"
     },
     "description": {
-      "km": "កាហ្វេខ្មៅស្រស់ ក្លិនឈ្ងុយ និងរសជាតិដិតជាប់មាត់",
-      "en": "Rich and bold single-origin espresso shot"
+      "km": "លៀសអប់គ្រឿងឈ្ងុយឆ្ងាញ់ ជាមួយគល់ស្លឹកគ្រៃ និងគ្រឿងផ្សំពិសេសប្រចាំហាង",
+      "en": "Aromatic steamed freshwater clams with lemongrass and house-blend spices"
     },
-    "categoryId": "cat-coffee",
+    "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/espresso.svg"
+      "/images/menu/ETum_Foods (2).png"
     ],
     "available": true,
     "featured": true,
-    "priceUsd": 2.0
+    "priceUsd": 1.75
   },
   {
-    "id": "item-iced-latte",
-    "slug": "iced-latte",
+    "id": "item-leas-sor-aob",
+    "slug": "leas-sor-aob",
     "name": {
-      "km": "ឡាតេទឹកកក",
-      "en": "Iced Latte"
+      "km": "លៀសសអប់",
+      "en": "Steamed White Clams"
     },
     "description": {
-      "km": "កាហ្វេឡាតេទឹកកក ជាមួយទឹកដោះគោស្រស់មានរសជាតិផ្អែមស្រទន់",
-      "en": "Espresso with fresh chilled milk and ice"
+      "km": "លៀសសសាច់ផ្អែមស្រស់ អប់គ្រឿងឈ្ងុយប្រហើរ",
+      "en": "Tender white clams steamed with fresh aromatic herbs"
     },
-    "categoryId": "cat-coffee",
+    "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/iced-latte.svg"
-    ],
-    "available": true,
-    "featured": true,
-    "variants": [
-      {
-        "id": "regular",
-        "name": {
-          "km": "កែវធម្មតា",
-          "en": "Regular"
-        },
-        "available": true,
-        "priceUsd": 2.75
-      },
-      {
-        "id": "large",
-        "name": {
-          "km": "កែវធំ",
-          "en": "Large"
-        },
-        "available": true,
-        "priceUsd": 3.5
-      }
-    ]
-  },
-  {
-    "id": "item-green-tea",
-    "slug": "green-tea",
-    "name": {
-      "km": "តែបៃតងធម្មជាតិ",
-      "en": "Natural Green Tea"
-    },
-    "description": {
-      "km": "តែបៃតងស្រស់គុណភាពខ្ពស់ ផ្តល់ថាមពលនិងសុខភាព",
-      "en": "High mountain premium steamed green tea"
-    },
-    "categoryId": "cat-tea",
-    "images": [
-      "/images/menu/green-tea.svg"
-    ],
-    "available": true,
-    "variants": [
-      {
-        "id": "hot",
-        "name": {
-          "km": "ក្តៅ",
-          "en": "Hot"
-        },
-        "available": true,
-        "priceUsd": 2.25
-      },
-      {
-        "id": "cold",
-        "name": {
-          "km": "ត្រជាក់",
-          "en": "Cold"
-        },
-        "available": false,
-        "priceUsd": 2.75
-      }
-    ]
-  },
-  {
-    "id": "item-passion-juice",
-    "slug": "passion-juice",
-    "name": {
-      "km": "ទឹកក្រូចឆ្មារផាសិន",
-      "en": "Passion Fruit Juice"
-    },
-    "description": {
-      "km": "ទឹកផាសិនស្រស់ជូរអែម ជួយបំបាត់ការស្រេកទឹក",
-      "en": "Freshly squeezed sweet and sour passion fruit"
-    },
-    "categoryId": "cat-tea",
-    "images": [
-      "/images/menu/passion-juice.svg"
-    ],
-    "available": false,
-    "variants": [
-      {
-        "id": "regular",
-        "name": {
-          "km": "ធម្មតា",
-          "en": "Regular"
-        },
-        "available": true,
-        "priceUsd": 2.5
-      },
-      {
-        "id": "large",
-        "name": {
-          "km": "ធំ",
-          "en": "Large"
-        },
-        "available": true,
-        "priceUsd": 3.25
-      }
-    ]
-  },
-  {
-    "id": "item-croissant",
-    "slug": "croissant",
-    "name": {
-      "km": "នំប៉័ងក្រូសង់ប៊ឺរ",
-      "en": "Butter Croissant"
-    },
-    "description": {
-      "km": "នំប៉័ងដុតក្តៅៗ ស្រួយក្រៅទន់ក្នុង ជាមួយប៊ឺរប្រណិត"
-    },
-    "categoryId": "cat-food",
-    "images": [
-      "/images/menu/croissant.svg"
+      "/images/menu/ETum_Foods (4).png"
     ],
     "available": true,
     "featured": true,
     "priceUsd": 2.5
   },
   {
-    "id": "item-sandwich",
-    "slug": "club-sandwich",
+    "id": "item-khyong-sre-aob",
+    "slug": "khyong-sre-aob",
     "name": {
-      "km": "ក្លឹបសាំងវិច",
-      "en": "Club Sandwich"
+      "km": "ខ្យងស្រែអប់គ្រឿង",
+      "en": "Steamed Field Snails with Spices"
     },
     "description": {
-      "km": "សាំងវិចសាច់មាន់ បន្លែស្រស់ និងឈីសបន្ទះ",
-      "en": "Triple-decker sandwich with chicken, fresh greens, and cheese"
+      "km": "ខ្យងស្រែស្រស់ៗ អប់ជាមួយគ្រឿងទេសខ្មែរដិតជាប់មាត់",
+      "en": "Fresh rice-field snails baked with traditional Khmer herbs"
     },
-    "categoryId": "cat-food",
+    "categoryId": "cat-steamed-spices",
     "images": [
-      "/images/menu/club-sandwich.svg"
-    ],
-    "available": false,
-    "priceUsd": 4.5
-  },
-  {
-    "id": "item-cheesecake",
-    "slug": "cheesecake",
-    "name": {
-      "km": "នំខេកឈីសស្ត្រប៊ឺរី"
-    },
-    "description": {
-      "km": "នំខេកឈីសទន់ម៉ត់ ជាមួយទឹកស្ត្រប៊ឺរីផ្អែមស្រទន់"
-    },
-    "categoryId": "cat-dessert",
-    "images": [
-      "/images/menu/cheesecake.svg"
+      "/images/menu/ETum_Foods (3).png"
     ],
     "available": true,
-    "priceUsd": 3.5
+    "featured": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-khyov-aob",
+    "slug": "khyov-aob",
+    "name": {
+      "km": "ខ្យៅអប់គ្រឿង",
+      "en": "Steamed Apple Snails with Spices"
+    },
+    "description": {
+      "km": "ខ្យៅសាច់ណែនស្រួយ អប់គ្រឿងទេសពិសេស",
+      "en": "Crisp and juicy apple snails steamed with fragrant spices"
+    },
+    "categoryId": "cat-steamed-spices",
+    "images": [
+      "/images/menu/ETum_Foods (12).png"
+    ],
+    "available": true,
+    "priceUsd": 1.75
+  },
+  {
+    "id": "item-prohet-sach-ko-aob",
+    "slug": "prohet-sach-ko-aob",
+    "name": {
+      "km": "ប្រហិតសាច់គោអប់",
+      "en": "Steamed Beef Meatballs"
+    },
+    "description": {
+      "km": "ប្រហិតសាច់គោសុទ្ធស្វិតឆ្ងាញ់ អប់គ្រឿងក្តៅៗ",
+      "en": "Steamed springy beef meatballs with flavorful house seasonings"
+    },
+    "categoryId": "cat-steamed-spices",
+    "images": [
+      "/images/menu/ETum_Foods (11).png"
+    ],
+    "available": true,
+    "variants": [
+      {
+        "id": "regular",
+        "name": {
+          "km": "ចានតូច",
+          "en": "Regular"
+        },
+        "available": true,
+        "priceUsd": 1.25
+      },
+      {
+        "id": "large",
+        "name": {
+          "km": "ចានធំ",
+          "en": "Large"
+        },
+        "available": true,
+        "priceUsd": 2.5
+      }
+    ]
+  },
+  {
+    "id": "item-ngav-aob-ampil-mtes",
+    "slug": "ngav-aob-ampil-mtes",
+    "name": {
+      "km": "ងាវអប់អំពិលម្ទេស",
+      "en": "Steamed Cockles with Tamarind Chili"
+    },
+    "description": {
+      "km": "ងាវស្រស់ៗ អប់ជាមួយទឹកអំពិលម្ទេសជូរអែមហឹរឆ្ងាញ់",
+      "en": "Fresh blood cockles steamed in spicy-sweet tamarind chili glaze"
+    },
+    "categoryId": "cat-steamed-tamarind",
+    "images": [
+      "/images/menu/ETum_Foods (8).png"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 3.75
+  },
+  {
+    "id": "item-bangkang-aob-ampil-mtes",
+    "slug": "bangkang-aob-ampil-mtes",
+    "name": {
+      "km": "បង្កងអប់អំពិលម្ទេស",
+      "en": "Steamed River Prawns with Tamarind Chili"
+    },
+    "description": {
+      "km": "បង្កងទឹកសាបស្រស់ អប់ទឹកអំពិលម្ទេសរសជាតិដិត",
+      "en": "Fresh river prawns simmered in savory tamarind chili sauce"
+    },
+    "categoryId": "cat-steamed-tamarind",
+    "images": [
+      "/images/menu/ETum_Foods (9).png"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-kdam-sre-aob-ampil-mtes",
+    "slug": "kdam-sre-aob-ampil-mtes",
+    "name": {
+      "km": "ក្ដាមស្រែអប់អំពិលម្ទេស",
+      "en": "Steamed Field Crabs with Tamarind Chili"
+    },
+    "description": {
+      "km": "ក្ដាមស្រែសាច់ផ្អែម អប់ជាមួយអំពិលទុំ និងម្ទេសស្រស់",
+      "en": "Field crabs prepared in tangy sweet tamarind chili seasoning"
+    },
+    "categoryId": "cat-steamed-tamarind",
+    "images": [
+      "/images/menu/ETum_Foods (10).png"
+    ],
+    "available": true,
+    "priceUsd": 1.75
+  },
+  {
+    "id": "item-pong-krouch-koun",
+    "slug": "pong-krouch-koun",
+    "name": {
+      "km": "ពងក្រួចកូន",
+      "en": "Steamed Baby Quail Eggs"
+    },
+    "description": {
+      "km": "ពងក្រួចកូន រសជាតិឆ្ងាញ់ពិសា ជាមួយទឹកត្រីកោះកុង ឬអំពិលម្ទេស",
+      "en": "Delicious baby quail eggs with Koh Kong dipping sauce or tamarind chili"
+    },
+    "categoryId": "cat-steamed-tamarind",
+    "images": [
+      "/images/menu/ETum_Foods (13).png"
+    ],
+    "available": true,
+    "variants": [
+      {
+        "id": "regular",
+        "name": {
+          "km": "ចានតូច",
+          "en": "Regular"
+        },
+        "available": true,
+        "priceUsd": 1.25
+      },
+      {
+        "id": "large",
+        "name": {
+          "km": "ចានធំ",
+          "en": "Large"
+        },
+        "available": true,
+        "priceUsd": 2.5
+      }
+    ]
+  },
+  {
+    "id": "item-khyov-sngor",
+    "slug": "khyov-sngor",
+    "name": {
+      "km": "ខ្យៅស្ងោរ",
+      "en": "Boiled Apple Snails"
+    },
+    "description": {
+      "km": "ខ្យៅស្ងោរក្តៅៗ ញ៉ាំជាមួយទឹកត្រីកោះកុងហឹរឆ្ងាញ់",
+      "en": "Boiled apple snails served with signature spicy lime dip"
+    },
+    "categoryId": "cat-boiled",
+    "images": [
+      "/images/menu/ETum_Foods (14).png"
+    ],
+    "available": true,
+    "priceUsd": 1.75
+  },
+  {
+    "id": "item-kdam-sngor",
+    "slug": "kdam-sngor",
+    "name": {
+      "km": "ក្ដាមស្ងោរ",
+      "en": "Boiled Field Crabs"
+    },
+    "description": {
+      "km": "ក្ដាមស្រែស្ងោរស្រស់ៗ សាច់ផ្អែមធម្មជាតិ",
+      "en": "Freshly boiled field crabs with natural sweet flavor"
+    },
+    "categoryId": "cat-boiled",
+    "images": [
+      "/images/menu/ETum_Foods (15).png"
+    ],
+    "available": true,
+    "priceUsd": 1.75
+  },
+  {
+    "id": "item-khyong-sngor",
+    "slug": "khyong-sngor",
+    "name": {
+      "km": "ខ្យងស្ងោរ",
+      "en": "Boiled Field Snails"
+    },
+    "description": {
+      "km": "ខ្យងស្រែស្ងោរជាមួយស្លឹកក្រូចសើច និងគល់ស្លឹកគ្រៃ",
+      "en": "Traditional boiled snails with kaffir lime leaves and lemongrass"
+    },
+    "categoryId": "cat-boiled",
+    "images": [
+      "/images/menu/ETum_Foods (16).png"
+    ],
+    "available": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-ngav-sros",
+    "slug": "ngav-sros",
+    "name": {
+      "km": "ងាវស្រុះ",
+      "en": "Poached Blood Cockles"
+    },
+    "description": {
+      "km": "ងាវស្រុះស្រស់ៗ ផ្អែមឈ្ងុយ ជាមួយទឹកត្រីកោះកុង",
+      "en": "Plump and juicy poached cockles with spicy-sour seafood dip"
+    },
+    "categoryId": "cat-boiled",
+    "images": [
+      "/images/menu/ETum_Foods (17).png"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 3.75
+  },
+  {
+    "id": "item-slab-moan-bompong",
+    "slug": "slab-moan-bompong",
+    "name": {
+      "km": "ស្លាបមាន់បំពង",
+      "en": "Crispy Fried Chicken Wings"
+    },
+    "description": {
+      "km": "ស្លាបមាន់បំពងស្រួយស្រុប ក្តៅៗ រសជាតិឆ្ងាញ់ជាប់មាត់",
+      "en": "Golden crispy deep-fried chicken wings with savory seasonings"
+    },
+    "categoryId": "cat-fried-grilled",
+    "images": [
+      "/images/menu/ETum_Foods (1).png"
+    ],
+    "available": true,
+    "featured": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-slab-moan-kandal-bompong",
+    "slug": "slab-moan-kandal-bompong",
+    "name": {
+      "km": "ស្លាបមាន់បំពងផ្នែកកណ្ដាល",
+      "en": "Fried Mid-Joint Wings"
+    },
+    "description": {
+      "km": "ស្លាបមាន់ផ្នែកកណ្ដាលបំពងស្រួយ ឆ្ងាញ់ពិសា",
+      "en": "Crispy mid-joint chicken wings seasoned to perfection"
+    },
+    "categoryId": "cat-fried-grilled",
+    "images": [
+      "/images/menu/ETum_Foods (5).png"
+    ],
+    "available": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-sach-ko-chrounoch-ang",
+    "slug": "sach-ko-chrounoch-ang",
+    "name": {
+      "km": "សាច់គោជ្រនួចអាំង",
+      "en": "Grilled Beef Skewers"
+    },
+    "description": {
+      "km": "សាច់គោជ្រនួចអាំងគ្រឿងឈ្ងុយ ក្លិនឈ្ងុយដិត (តម្លៃ ២.៥០០៛ ក្នុង ១ ចង្កាក់)",
+      "en": "Marinated skewers of tender grilled beef with lemongrass spices (2,500 Riel per skewer)"
+    },
+    "categoryId": "cat-fried-grilled",
+    "images": [
+      "/images/menu/ETum_Foods (6).png"
+    ],
+    "available": true,
+    "priceUsd": 0.625
+  },
+  {
+    "id": "item-prohet-sach-ko",
+    "slug": "prohet-sach-ko",
+    "name": {
+      "km": "ប្រហិតសាច់គោ",
+      "en": "Fried Beef Meatballs"
+    },
+    "description": {
+      "km": "ប្រហិតសាច់គោបំពងក្តៅៗ ជាមួយបន្លែស្រស់ និងទឹកជ្រលក់",
+      "en": "Fried beef meatballs served with fresh herbs and dipping sauce"
+    },
+    "categoryId": "cat-fried-grilled",
+    "images": [
+      "/images/menu/ETum_Foods (18).png"
+    ],
+    "available": true,
+    "variants": [
+      {
+        "id": "regular",
+        "name": {
+          "km": "ចានតូច",
+          "en": "Regular"
+        },
+        "available": true,
+        "priceUsd": 1.25
+      },
+      {
+        "id": "large",
+        "name": {
+          "km": "ចានធំ",
+          "en": "Large"
+        },
+        "available": true,
+        "priceUsd": 2.5
+      }
+    ]
+  },
+  {
+    "id": "item-prohet-bonle",
+    "slug": "prohet-bonle",
+    "name": {
+      "km": "ប្រហិតបន្លែ",
+      "en": "Vegetable Balls"
+    },
+    "description": {
+      "km": "ប្រហិតបន្លែរសជាតិឆ្ងាញ់ស្រួយ សម្រាប់អ្នកចូលចិត្តបន្លែ",
+      "en": "Savory vegetable and herb fritter balls"
+    },
+    "categoryId": "cat-fried-grilled",
+    "images": [
+      "/images/menu/ETum_Foods (7).png"
+    ],
+    "available": true,
+    "priceUsd": 2.5
+  },
+  {
+    "id": "item-teuk-borisot",
+    "slug": "teuk-borisot",
+    "name": {
+      "km": "ទឹកបរិសុទ្ធ",
+      "en": "Pure Drinking Water"
+    },
+    "description": {
+      "km": "ទឹកបរិសុទ្ធត្រជាក់ស្រស់ថ្លា បំបាត់ការស្រេកទឹក",
+      "en": "Refreshing chilled bottled drinking water"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/pure-water.svg"
+    ],
+    "available": true,
+    "priceUsd": 0.5
+  },
+  {
+    "id": "item-coca-cola",
+    "slug": "coca-cola",
+    "name": {
+      "km": "កូកាកូឡា",
+      "en": "Coca-Cola"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈកូកាកូឡាត្រជាក់ ជាមួយទឹកកក",
+      "en": "Chilled can of Coca-Cola served cold"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/coca-cola.svg"
+    ],
+    "available": true,
+    "priceUsd": 0.625
   }
 ]
-

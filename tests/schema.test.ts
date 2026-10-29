@@ -13,11 +13,11 @@ describe('T02 — Data Schema and Validation', () => {
     const item = {
       id: 'test-std',
       slug: 'test-std',
-      name: { km: 'តែបៃតង', en: 'Green Tea' },
-      categoryId: 'cat-tea',
+      name: { km: 'លៀសអប់', en: 'Steamed Clams' },
+      categoryId: 'cat-steamed-spices',
       images: [],
       available: true,
-      priceUsd: 2.5,
+      priceUsd: 1.75,
     };
     const res = MenuItemSchema.safeParse(item);
     expect(res.success).toBe(true);
@@ -27,13 +27,13 @@ describe('T02 — Data Schema and Validation', () => {
     const item = {
       id: 'test-var',
       slug: 'test-var',
-      name: { km: 'តែបៃតង', en: 'Green Tea' },
-      categoryId: 'cat-tea',
+      name: { km: 'ប្រហិតសាច់គោអប់', en: 'Steamed Beef Meatballs' },
+      categoryId: 'cat-steamed-spices',
       images: [],
       available: true,
       variants: [
-        { id: 'sm', name: { km: 'តូច', en: 'Small' }, available: true, priceUsd: 2.0 },
-        { id: 'lg', name: { km: 'ធំ', en: 'Large' }, available: false, priceUsd: 3.0 },
+        { id: 'sm', name: { km: 'តូច', en: 'Small' }, available: true, priceUsd: 1.25 },
+        { id: 'lg', name: { km: 'ធំ', en: 'Large' }, available: false, priceUsd: 2.5 },
       ],
     };
     const res = MenuItemSchema.safeParse(item);
@@ -44,13 +44,13 @@ describe('T02 — Data Schema and Validation', () => {
     const item = {
       id: 'test-mixed',
       slug: 'test-mixed',
-      name: { km: 'តែបៃតង' },
-      categoryId: 'cat-tea',
+      name: { km: 'លៀសអប់' },
+      categoryId: 'cat-steamed-spices',
       images: [],
       available: true,
-      priceUsd: 2.5,
+      priceUsd: 1.75,
       variants: [
-        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 2.0 },
+        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 1.25 },
       ],
     };
     const res = MenuItemSchema.safeParse(item);
@@ -64,8 +64,8 @@ describe('T02 — Data Schema and Validation', () => {
     const item = {
       id: 'test-none',
       slug: 'test-none',
-      name: { km: 'តែបៃតង' },
-      categoryId: 'cat-tea',
+      name: { km: 'លៀសអប់' },
+      categoryId: 'cat-steamed-spices',
       images: [],
       available: true,
     };
@@ -80,13 +80,13 @@ describe('T02 — Data Schema and Validation', () => {
     const item = {
       id: 'test-dup-variant',
       slug: 'test-dup-variant',
-      name: { km: 'កាហ្វេ' },
-      categoryId: 'cat-coffee',
+      name: { km: 'ប្រហិតសាច់គោអប់' },
+      categoryId: 'cat-steamed-spices',
       images: [],
       available: true,
       variants: [
-        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 2.0 },
-        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 3.0 },
+        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 1.25 },
+        { id: 'sm', name: { km: 'តូច' }, available: true, priceUsd: 2.5 },
       ],
     };
     const res = MenuItemSchema.safeParse(item);
@@ -127,7 +127,7 @@ describe('T02 — Data Schema and Validation', () => {
 
   it('warns when English translation is missing and falls back to Khmer', () => {
     const itemWithoutEnglish = [
-      { id: 'item-no-en', slug: 'no-en', name: { km: 'ឈ្មោះខ្មែរ' }, categoryId: 'cat-coffee', images: [], available: true, priceUsd: 2.0 },
+      { id: 'item-no-en', slug: 'no-en', name: { km: 'ឈ្មោះខ្មែរ' }, categoryId: 'cat-steamed-spices', images: [], available: true, priceUsd: 1.75 },
     ];
     const report = validateMenuData(validCategories, itemWithoutEnglish, validSiteConfig);
     expect(report.isValid).toBe(true);
@@ -158,10 +158,10 @@ describe('T02 — Data Schema and Validation', () => {
         id: 'item-bad-asset',
         slug: 'bad-asset',
         name: { km: 'តេស្ត' },
-        categoryId: 'cat-coffee',
+        categoryId: 'cat-steamed-spices',
         images: ['/images/menu/non-existent-image.png'],
         available: true,
-        priceUsd: 2.0,
+        priceUsd: 1.75,
       },
     ];
     const report = validateMenuData(validCategories, itemWithMissingAsset, validSiteConfig, {
@@ -174,8 +174,7 @@ describe('T02 — Data Schema and Validation', () => {
   it('passes development validation for current project data files', () => {
     const report = validateMenuData(categoriesData, menuItemsData, siteConfigData);
     expect(report.isValid).toBe(true);
-    // Warnings are expected for items without English translations
-    expect(report.warnings.length).toBeGreaterThan(0);
+    expect(report.errors.length).toBe(0);
   });
 });
 

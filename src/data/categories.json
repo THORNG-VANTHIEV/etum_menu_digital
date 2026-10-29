@@ -1,53 +1,52 @@
 [
   {
-    "id": "cat-coffee",
-    "slug": "coffee",
+    "id": "cat-steamed-spices",
+    "slug": "steamed-spices",
     "name": {
-      "km": "កាហ្វេ",
-      "en": "Coffee"
+      "km": "មុខម្ហូបអប់គ្រឿង",
+      "en": "Steamed with Spices"
     },
     "sortOrder": 1,
     "active": true
   },
   {
-    "id": "cat-tea",
-    "slug": "tea-drinks",
+    "id": "cat-steamed-tamarind",
+    "slug": "steamed-tamarind",
     "name": {
-      "km": "តែ និងភេសជ្ជៈ",
-      "en": "Tea & Drinks"
+      "km": "មុខម្ហូបអប់អំពិលម្ទេស",
+      "en": "Steamed with Tamarind Chili"
     },
     "sortOrder": 2,
     "active": true
   },
   {
-    "id": "cat-food",
-    "slug": "food",
+    "id": "cat-boiled",
+    "slug": "boiled-poached",
     "name": {
-      "km": "អាហារសម្រន់",
-      "en": "Food & Snacks"
+      "km": "មុខម្ហូបស្ងោរ និងស្រុះ",
+      "en": "Boiled & Poached"
     },
     "sortOrder": 3,
     "active": true
   },
   {
-    "id": "cat-dessert",
-    "slug": "desserts",
+    "id": "cat-fried-grilled",
+    "slug": "fried-grilled-meatballs",
     "name": {
-      "km": "បង្អែម",
-      "en": "Desserts"
+      "km": "មុខម្ហូបបំពង អាំង និងប្រហិត",
+      "en": "Fried, Grilled & Meatballs"
     },
     "sortOrder": 4,
     "active": true
   },
   {
-    "id": "cat-seasonal",
-    "slug": "seasonal",
+    "id": "cat-beverages",
+    "slug": "beverages",
     "name": {
-      "km": "ពិសេសតាមរដូវកាល",
-      "en": "Seasonal Specials"
+      "km": "ភេសជ្ជៈ",
+      "en": "Beverages"
     },
     "sortOrder": 5,
-    "active": false
+    "active": true
   }
 ]
-

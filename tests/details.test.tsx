@@ -1,14 +1,15 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from '../src/features/language/LanguageContext';
 import ItemDetailsPage from '../src/pages/ItemDetailsPage';
+import { DataService } from '../src/services/dataService';
 
 describe('T08 — Details Pages and Variants', () => {
   it('renders standard-price item details for valid slug', () => {
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/espresso']}>
+        <MemoryRouter initialEntries={['/menu/leas-aob']}>
           <Routes>
             <Route path="menu/:slug" element={<ItemDetailsPage />} />
           </Routes>
@@ -16,9 +17,9 @@ describe('T08 — Details Pages and Variants', () => {
       </LanguageProvider>
     );
 
-    expect(screen.getByRole('heading', { name: 'កាហ្វេអេសប្រេសសូ' })).toBeInTheDocument();
-    expect(screen.getByText('Espresso')).toBeInTheDocument();
-    expect(screen.getByTestId('total-price')).toHaveTextContent('$2.00');
+    expect(screen.getByRole('heading', { name: 'លៀសអប់' })).toBeInTheDocument();
+    expect(screen.getByText('Steamed Clams with Spices')).toBeInTheDocument();
+    expect(screen.getByTestId('total-price')).toHaveTextContent('$1.75');
     expect(screen.getByText(/មានក្នុងស្តុកស្រាប់/i)).toBeInTheDocument();
   });
 
@@ -38,10 +39,10 @@ describe('T08 — Details Pages and Variants', () => {
   });
 
   it('renders variant options and updates price when another variant is selected', () => {
-    // Iced Latte has Regular ($2.75) and Large ($3.50)
+    // Steamed beef meatballs (item-prohet-sach-ko-aob) has Regular ($1.25) and Large ($2.50)
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/iced-latte']}>
+        <MemoryRouter initialEntries={['/menu/prohet-sach-ko-aob']}>
           <Routes>
             <Route path="menu/:slug" element={<ItemDetailsPage />} />
           </Routes>
@@ -49,26 +50,40 @@ describe('T08 — Details Pages and Variants', () => {
       </LanguageProvider>
     );
 
-    expect(screen.getByRole('heading', { name: 'ឡាតេទឹកកក' })).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: /កែវធម្មតា/i })).toBeInTheDocument();
-    expect(screen.getByRole('radio', { name: /កែវធំ/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'ប្រហិតសាច់គោអប់' })).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /ចានតូច/i })).toBeInTheDocument();
+    expect(screen.getByRole('radio', { name: /ចានធំ/i })).toBeInTheDocument();
 
-    // Default regular is selected -> $2.75
-    expect(screen.getByTestId('total-price')).toHaveTextContent('$2.75');
+    // Default regular is selected -> $1.25
+    expect(screen.getByTestId('total-price')).toHaveTextContent('$1.25');
 
     // Click Large variant
-    const largeBtn = screen.getByRole('radio', { name: /កែវធំ/i });
+    const largeBtn = screen.getByRole('radio', { name: /ចានធំ/i });
     fireEvent.click(largeBtn);
 
-    // Price should now be $3.50
-    expect(screen.getByTestId('total-price')).toHaveTextContent('$3.50');
+    // Price should now be $2.50
+    expect(screen.getByTestId('total-price')).toHaveTextContent('$2.50');
   });
 
   it('disables all variants when parent item is unavailable', () => {
-    // Passion juice (item-passion-juice) is unavailable at parent level
+    const mockUnavailableItem = {
+      id: 'test-unavail-parent',
+      slug: 'test-unavail-parent',
+      name: { km: 'មុខម្ហូបពិសេសអប់', en: 'Special Steamed Dish' },
+      categoryId: 'cat-steamed-spices',
+      images: [],
+      available: false,
+      variants: [
+        { id: 'v1', name: { km: 'ចានតូច', en: 'Small' }, available: true, priceUsd: 1.25 },
+        { id: 'v2', name: { km: 'ចានធំ', en: 'Large' }, available: true, priceUsd: 2.50 },
+      ],
+    };
+
+    vi.spyOn(DataService, 'getMenuItemBySlug').mockReturnValueOnce(mockUnavailableItem);
+
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/passion-juice']}>
+        <MemoryRouter initialEntries={['/menu/test-unavail-parent']}>
           <Routes>
             <Route path="menu/:slug" element={<ItemDetailsPage />} />
           </Routes>
@@ -76,7 +91,7 @@ describe('T08 — Details Pages and Variants', () => {
       </LanguageProvider>
     );
 
-    expect(screen.getByRole('heading', { name: 'ទឹកក្រូចឆ្មារផាសិន' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'មុខម្ហូបពិសេសអប់' })).toBeInTheDocument();
     expect(screen.getAllByText(/អស់ពីស្តុក/i).length).toBeGreaterThan(0);
 
     // All variant buttons must be disabled
@@ -87,10 +102,24 @@ describe('T08 — Details Pages and Variants', () => {
   });
 
   it('prevents selecting an unavailable variant when parent is available', () => {
-    // Green Tea: Hot is available ($2.25), Cold is unavailable ($2.75)
+    const mockMixedItem = {
+      id: 'test-mixed-avail',
+      slug: 'test-mixed-avail',
+      name: { km: 'ម្ហូបតេស្ត', en: 'Test Dish' },
+      categoryId: 'cat-steamed-spices',
+      images: [],
+      available: true,
+      variants: [
+        { id: 'v1', name: { km: 'ចានតូច', en: 'Small' }, available: true, priceUsd: 1.25 },
+        { id: 'v2', name: { km: 'ចានធំ', en: 'Large' }, available: false, priceUsd: 2.50 },
+      ],
+    };
+
+    vi.spyOn(DataService, 'getMenuItemBySlug').mockReturnValueOnce(mockMixedItem);
+
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/green-tea']}>
+        <MemoryRouter initialEntries={['/menu/test-mixed-avail']}>
           <Routes>
             <Route path="menu/:slug" element={<ItemDetailsPage />} />
           </Routes>
@@ -98,14 +127,14 @@ describe('T08 — Details Pages and Variants', () => {
       </LanguageProvider>
     );
 
-    const hotRadio = screen.getByRole('radio', { name: /ក្តៅ/i });
-    const coldRadio = screen.getByRole('radio', { name: /ត្រជាក់/i });
+    const smallRadio = screen.getByRole('radio', { name: /ចានតូច/i });
+    const largeRadio = screen.getByRole('radio', { name: /ចានធំ/i });
 
-    expect(hotRadio).not.toBeDisabled();
-    expect(coldRadio).toBeDisabled();
+    expect(smallRadio).not.toBeDisabled();
+    expect(largeRadio).toBeDisabled();
 
-    // Try clicking coldRadio - should not change selection
-    fireEvent.click(coldRadio);
-    expect(screen.getByTestId('total-price')).toHaveTextContent('$2.25');
+    // Try clicking largeRadio - should not change selection
+    fireEvent.click(largeRadio);
+    expect(screen.getByTestId('total-price')).toHaveTextContent('$1.25');
   });
 });

@@ -89,11 +89,10 @@ describe('T09 — Bilingual UX & Localization', () => {
     expect(screen.getByPlaceholderText(/Search items\.\.\./i)).toBeInTheDocument();
   });
 
-  it('renders item details with active locale and fallback', () => {
-    // Cheesecake is missing English name in sample data, so should display Khmer name even in EN
+  it('renders item details with active locale', () => {
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/cheesecake']}>
+        <MemoryRouter initialEntries={['/menu/leas-aob']}>
           <Routes>
             <Route path="/" element={<AppLayout />}>
               <Route path="menu/:slug" element={<ItemDetailsPage />} />
@@ -106,7 +105,7 @@ describe('T09 — Bilingual UX & Localization', () => {
     // Switch to EN
     fireEvent.click(screen.getByRole('button', { name: 'EN' }));
 
-    // Heading should show Khmer name fallback since EN name is absent
-    expect(screen.getByRole('heading', { name: 'នំខេកឈីសស្ត្រប៊ឺរី' })).toBeInTheDocument();
+    // Heading should show English name
+    expect(screen.getByRole('heading', { name: 'Steamed Clams with Spices' })).toBeInTheDocument();
   });
 });

@@ -12,33 +12,33 @@ describe('T05 & T06 — Menu Category Filtering & Search', () => {
   });
 
   it('filters items by specific category', () => {
-    const coffeeItems = filterMenuItems(items, { category: 'cat-coffee', searchTerm: '' });
-    expect(coffeeItems.length).toBeGreaterThan(0);
-    expect(coffeeItems.every((item) => item.categoryId === 'cat-coffee')).toBe(true);
+    const steamedItems = filterMenuItems(items, { category: 'cat-steamed-spices', searchTerm: '' });
+    expect(steamedItems.length).toBeGreaterThan(0);
+    expect(steamedItems.every((item) => item.categoryId === 'cat-steamed-spices')).toBe(true);
   });
 
   it('searches items in Khmer', () => {
-    // Search "កាហ្វេ" (Coffee)
-    const results = filterMenuItems(items, { category: 'all', searchTerm: 'កាហ្វេ', locale: 'km' });
+    // Search "លៀស" (Clams)
+    const results = filterMenuItems(items, { category: 'all', searchTerm: 'លៀស', locale: 'km' });
     expect(results.length).toBeGreaterThan(0);
-    expect(results.some((i) => i.id === 'item-espresso')).toBe(true);
+    expect(results.some((i) => i.id === 'item-leas-aob')).toBe(true);
   });
 
   it('searches items in English', () => {
-    // Search "Espresso" matches item-espresso (name) and item-iced-latte (description)
-    const results = filterMenuItems(items, { category: 'all', searchTerm: 'espresso', locale: 'en' });
-    expect(results.length).toBe(2);
-    expect(results.some((i) => i.id === 'item-espresso')).toBe(true);
+    // Search "Clams" matches Steamed Clams with Spices and Steamed White Clams
+    const results = filterMenuItems(items, { category: 'all', searchTerm: 'clams', locale: 'en' });
+    expect(results.length).toBeGreaterThanOrEqual(2);
+    expect(results.some((i) => i.id === 'item-leas-aob')).toBe(true);
   });
 
   it('composes category filter and search term correctly', () => {
-    // Category cat-food with search "Croissant"
-    const res = filterMenuItems(items, { category: 'cat-food', searchTerm: 'croissant' });
+    // Category cat-steamed-spices with search "លៀសស"
+    const res = filterMenuItems(items, { category: 'cat-steamed-spices', searchTerm: 'លៀសស' });
     expect(res.length).toBe(1);
-    expect(res[0].id).toBe('item-croissant');
+    expect(res[0].id).toBe('item-leas-sor-aob');
 
-    // Searching "espresso" in cat-food should return 0 items
-    const emptyRes = filterMenuItems(items, { category: 'cat-food', searchTerm: 'espresso' });
+    // Searching "បង្កង" (river prawns) in cat-steamed-spices should return 0 items
+    const emptyRes = filterMenuItems(items, { category: 'cat-steamed-spices', searchTerm: 'បង្កង' });
     expect(emptyRes.length).toBe(0);
   });
 

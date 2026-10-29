@@ -43,7 +43,7 @@ describe('T03 — App Shell and Routing', () => {
   it('renders Item Details page for valid slug', () => {
     render(
       <LanguageProvider>
-        <MemoryRouter initialEntries={['/menu/espresso']}>
+        <MemoryRouter initialEntries={['/menu/leas-aob']}>
           <Routes>
             <Route path="/" element={<AppLayout />}>
               <Route path="menu/:slug" element={<ItemDetailsPage />} />
@@ -52,8 +52,8 @@ describe('T03 — App Shell and Routing', () => {
         </MemoryRouter>
       </LanguageProvider>
     );
-    expect(screen.getByRole('heading', { name: 'កាហ្វេអេសប្រេសសូ' })).toBeInTheDocument();
-    expect(screen.getByText('$2.00')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'លៀសអប់' })).toBeInTheDocument();
+    expect(screen.getByText('$1.75')).toBeInTheDocument();
   });
 
   it('renders Not Found page for invalid slug under /menu/:slug', () => {
