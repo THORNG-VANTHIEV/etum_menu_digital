@@ -31,7 +31,7 @@ export const HomePage: React.FC = () => {
           <div className="pt-2">
             <Link
               to="/menu"
-              className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-amber-400 text-stone-950 font-bold text-sm hover:bg-amber-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 transition-all shadow-md active:scale-95"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-2xl bg-amber-400 text-stone-950 font-bold text-sm hover:bg-amber-300 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-400 transition-all shadow-md active:scale-95"
             >
               <span>{t('viewFullMenu')}</span>
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -72,7 +72,7 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={item.id}
                   to={`/menu/${item.slug}`}
-                  className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
+                  className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
                   aria-label={`${primaryName} - ${item.available ? 'Available' : 'Sold Out'}`}
                 >
                   <div className="aspect-[4/3] bg-stone-50 overflow-hidden relative flex items-center justify-center p-2.5 sm:p-3">

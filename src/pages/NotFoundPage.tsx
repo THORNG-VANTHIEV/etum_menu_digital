@@ -30,13 +30,13 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
       <div className="flex flex-col sm:flex-row items-center gap-3">
         <Link
           to="/menu"
-          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-semibold text-sm transition-all shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
+          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-semibold text-sm transition-all shadow-md outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
         >
           {t('backToMenu')}
         </Link>
         <Link
           to="/"
-          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 font-semibold text-sm transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 font-semibold text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
         >
           {t('backToHome')}
         </Link>

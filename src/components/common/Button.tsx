@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    'inline-flex items-center justify-center font-medium transition-all rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500 disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98]';
+    'inline-flex items-center justify-center font-medium transition-all rounded-xl outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-amber-500 disabled:opacity-50 disabled:cursor-not-allowed select-none active:scale-[0.98]';
 
   const sizeStyles: Record<ButtonSize, string> = {
     sm: 'px-3 py-1.5 text-xs',

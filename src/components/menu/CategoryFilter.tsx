@@ -52,7 +52,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         role="tab"
         aria-selected={activeCategoryId === 'all'}
         onClick={(e) => handleTabClick('all', e.currentTarget)}
-        className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
+        className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
           activeCategoryId === 'all'
             ? 'bg-amber-800 text-white shadow-xs'
             : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
@@ -73,7 +73,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
             role="tab"
             aria-selected={isSelected}
             onClick={(e) => handleTabClick(cat.id, e.currentTarget)}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
               isSelected
                 ? 'bg-amber-800 text-white shadow-xs'
                 : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'

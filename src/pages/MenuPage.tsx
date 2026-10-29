@@ -85,7 +85,7 @@ export const MenuPage: React.FC = () => {
             <button
               type="button"
               onClick={handleResetFilters}
-              className="mt-2 inline-flex items-center text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shadow-xs"
+              className="mt-2 inline-flex items-center text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-xl transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shadow-xs"
             >
               {t('resetFilters')}
             </button>

@@ -14,7 +14,7 @@ export const Header: React.FC = () => {
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="flex items-center space-x-2 sm:space-x-3 text-stone-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1 transition-opacity hover:opacity-90 min-w-0"
+          className="flex items-center space-x-2 sm:space-x-3 text-stone-900 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1 transition-opacity hover:opacity-90 min-w-0"
         >
           <img
             src="./images/branding/e_tum_icon.webp"
@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
           <nav className="flex items-center space-x-1" aria-label="Main navigation">
             <Link
               to="/"
-              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isHome
                   ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
             </Link>
             <Link
               to="/menu"
-              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isMenu
                   ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
@@ -65,7 +65,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setLocale('km')}
-              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 locale === 'km'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
                   : 'text-stone-500 hover:text-stone-900'
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => setLocale('en')}
-              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 locale === 'en'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
                   : 'text-stone-500 hover:text-stone-900'

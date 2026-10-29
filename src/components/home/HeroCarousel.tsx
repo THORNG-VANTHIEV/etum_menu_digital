@@ -90,7 +90,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, intervalMs =
                 onClick={() => setActiveIndex(index)}
                 aria-label={`${t('showSlide')} ${index + 1} / ${slides.length}`}
                 aria-current={index === activeIndex ? 'true' : undefined}
-                className="p-1.5 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+                className="p-1.5 rounded-full outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
               >
                 <span
                   className={`block h-2 rounded-full transition-all duration-300 ${
@@ -104,7 +104,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, intervalMs =
             type="button"
             onClick={() => setIsPaused((paused) => !paused)}
             aria-label={isPaused ? t('playSlideshow') : t('pauseSlideshow')}
-            className="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
+            className="w-7 h-7 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/80 outline-none focus-visible:ring-2 focus-visible:ring-amber-300"
           >
             {isPaused ? (
               <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
