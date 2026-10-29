@@ -76,8 +76,8 @@ export const uiTranslations = {
     en: 'Currently Unavailable',
   },
   inStock: {
-    km: 'មានក្នុងស្តុកស្រាប់',
-    en: 'In Stock & Available',
+    km: 'មានក្នុងហាងស្រាប់',
+    en: 'Available in Store',
   },
   itemUnavailableBanner: {
     km: '⚠️ មុខម្ហូបនេះអស់ពីស្តុកបណ្តោះអាសន្ន',
@@ -134,6 +134,10 @@ export const uiTranslations = {
   digitalMenuCopyright: {
     km: 'ម៉ឺនុយឌីជីថល',
     en: 'Digital Menu',
+  },
+  developedBy: {
+    km: 'អភិវឌ្ឍដោយ',
+    en: 'Developed by',
   },
 } as const;
 

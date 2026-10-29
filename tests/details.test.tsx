@@ -20,7 +20,7 @@ describe('T08 — Details Pages and Variants', () => {
     expect(screen.getByRole('heading', { name: 'លៀសអប់' })).toBeInTheDocument();
     expect(screen.getByText('Steamed Clams with Spices')).toBeInTheDocument();
     expect(screen.getByTestId('total-price')).toHaveTextContent('$1.75');
-    expect(screen.getByText(/មានក្នុងស្តុកស្រាប់/i)).toBeInTheDocument();
+    expect(screen.getByText(/មានក្នុងហាងស្រាប់/i)).toBeInTheDocument();
   });
 
   it('renders Not Found for non-existent item slug', () => {

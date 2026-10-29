@@ -14,9 +14,12 @@ export const Footer: React.FC = () => {
               {t('footerDescription')}
             </p>
           </div>
-          <div className="text-xs text-stone-400">
+          <div className="text-xs text-stone-400 space-y-1">
             <p>
               © {new Date().getFullYear()} {t('digitalMenuCopyright')}
+            </p>
+            <p>
+              {t('developedBy')} <span className="text-stone-300 font-medium">THORNG VANTHIEV</span>
             </p>
           </div>
         </div>

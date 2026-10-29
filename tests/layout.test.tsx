@@ -29,6 +29,7 @@ describe('T04 — Branding and Responsive Layout Components', () => {
       </LanguageProvider>
     );
     expect(screen.getByText(/ក្រុងសៀមរាប/i)).toBeInTheDocument();
+    expect(screen.getByText('THORNG VANTHIEV')).toBeInTheDocument();
   });
 
   it('renders Button with accessible focus rings and responds to click', () => {
