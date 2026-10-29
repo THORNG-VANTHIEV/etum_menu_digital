@@ -47,16 +47,16 @@ export const HomePage: React.FC = () => {
         <section className="space-y-5" aria-labelledby="featured-heading">
           <div className="flex items-center justify-between">
             <div>
-              <h2 id="featured-heading" className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+              <h2 id="featured-heading" className="text-xl sm:text-2xl font-black text-stone-900 dark:text-stone-100 tracking-tight">
                 {t('featuredItems')}
               </h2>
-              <p className="text-xs sm:text-sm text-stone-500">
+              <p className="text-xs sm:text-sm text-stone-500 dark:text-stone-400">
                 {t('featuredSubtitle')}
               </p>
             </div>
             <Link
               to="/menu"
-              className="text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 transition-colors flex items-center space-x-1"
+              className="text-xs sm:text-sm font-bold text-amber-800 dark:text-amber-300 hover:text-amber-950 dark:hover:text-amber-100 transition-colors flex items-center space-x-1"
             >
               <span>{t('viewAll')}</span>
             </Link>
@@ -72,10 +72,10 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={item.id}
                   to={`/menu/${item.slug}`}
-                  className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
+                  className="group bg-white dark:bg-palm-900 rounded-2xl border border-stone-200 dark:border-palm-800 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
                   aria-label={`${primaryName} - ${item.available ? 'Available' : 'Sold Out'}`}
                 >
-                  <div className="aspect-[4/3] bg-stone-50 overflow-hidden relative flex items-center justify-center p-2.5 sm:p-3">
+                  <div className="aspect-[4/3] bg-stone-50 dark:bg-palm-950 overflow-hidden relative flex items-center justify-center p-2.5 sm:p-3">
                     <ImageWithFallback
                       src={item.images[0]}
                       alt={primaryName}
@@ -89,20 +89,20 @@ export const HomePage: React.FC = () => {
                   </div>
                   <div className="p-4 space-y-1 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-bold text-stone-900 group-hover:text-amber-900 transition-colors text-base">
+                      <h3 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-900 dark:group-hover:text-amber-200 transition-colors text-base">
                         {primaryName}
                       </h3>
                       {secondaryName && (
-                        <p className="text-xs text-stone-500 font-medium">
+                        <p className="text-xs text-stone-500 dark:text-stone-400 font-medium">
                           {secondaryName}
                         </p>
                       )}
                     </div>
-                    <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-                      <span className="font-extrabold text-amber-950 text-sm">
+                    <div className="pt-3 border-t border-stone-100 dark:border-palm-800 flex items-center justify-between text-xs">
+                      <span className="font-extrabold text-amber-950 dark:text-amber-100 text-sm">
                         {price && `${price.isStartingPrice ? `${t('fromPrice')} ` : ''}${price.formatted}`}
                       </span>
-                      <span className="text-amber-700 font-bold group-hover:text-amber-950 transition-colors flex items-center space-x-1">
+                      <span className="text-amber-700 dark:text-amber-400 font-bold group-hover:text-amber-950 dark:group-hover:text-amber-100 transition-colors flex items-center space-x-1">
                         <span>{t('viewDetails')}</span>
                       </span>
                     </div>

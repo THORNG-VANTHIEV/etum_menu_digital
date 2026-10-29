@@ -15,6 +15,14 @@ export const uiTranslations = {
     km: 'បញ្ជីមុខម្ហូប',
     en: 'Menu',
   },
+  switchToDark: {
+    km: 'ប្តូរទៅរបៀបងងឹត',
+    en: 'Switch to dark mode',
+  },
+  switchToLight: {
+    km: 'ប្តូរទៅរបៀបភ្លឺ',
+    en: 'Switch to light mode',
+  },
   switchLanguage: {
     km: 'ប្តូរទៅភាសាអង់គ្លេស (English)',
     en: 'Switch to Khmer (ខ្មែរ)',

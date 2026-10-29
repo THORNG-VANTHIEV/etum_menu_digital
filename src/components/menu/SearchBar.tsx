@@ -23,7 +23,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={locale === 'km' ? 'ស្វែងរកឈ្មោះមុខម្ហូប...' : 'Search items...'}
-        className="w-full pl-10 pr-9 py-2 text-sm bg-white border border-stone-300 rounded-xl outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all placeholder:text-stone-400"
+        className="w-full pl-10 pr-9 py-2 text-sm bg-white dark:bg-palm-900 border border-stone-300 dark:border-palm-700 rounded-xl outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all placeholder:text-stone-400"
       />
       <div className="absolute left-3 top-2.5 text-stone-400 pointer-events-none" aria-hidden="true">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         <button
           type="button"
           onClick={() => onChange('')}
-          className="absolute right-2.5 top-2.5 p-0.5 rounded-full text-stone-400 hover:text-stone-700 hover:bg-stone-100 outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+          className="absolute right-2.5 top-2.5 p-0.5 rounded-full text-stone-400 hover:text-stone-700 dark:hover:text-stone-300 hover:bg-stone-100 dark:hover:bg-palm-800 outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
           aria-label={locale === 'km' ? 'សម្អាតការស្វែងរក' : 'Clear search'}
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -4,6 +4,8 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  // Dark mode is toggled by the `dark` class on <html> (theme button in the header)
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -12,6 +14,16 @@ export default {
       },
       screens: {
         'xs': '360px',
+      },
+      colors: {
+        // Dark-mode surfaces taken from the palm tree in the shop logo (palm-900 = #341C10)
+        palm: {
+          600: '#7D5538',
+          700: '#64402A',
+          800: '#4A2A1A',
+          900: '#341C10',
+          950: '#1C0E07',
+        },
       },
       // `backwards` fill only holds the start frame during a delay, so once an
       // animation ends it no longer overrides hover/active transforms.

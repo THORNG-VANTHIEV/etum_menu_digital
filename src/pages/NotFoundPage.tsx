@@ -18,13 +18,13 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
 
   return (
     <div className="py-16 flex flex-col items-center justify-center text-center px-4">
-      <div className="w-20 h-20 bg-amber-100 rounded-3xl flex items-center justify-center text-amber-800 text-3xl font-black mb-6 shadow-inner">
+      <div className="w-20 h-20 bg-amber-100 dark:bg-amber-900 rounded-3xl flex items-center justify-center text-amber-800 dark:text-amber-300 text-3xl font-black mb-6 shadow-inner">
         404
       </div>
-      <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 mb-3">
+      <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 mb-3">
         {displayTitle}
       </h1>
-      <p className="text-stone-600 max-w-md text-sm sm:text-base leading-relaxed mb-8">
+      <p className="text-stone-600 dark:text-stone-400 max-w-md text-sm sm:text-base leading-relaxed mb-8">
         {displayMessage}
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-3">
@@ -36,7 +36,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
         </Link>
         <Link
           to="/"
-          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 font-semibold text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+          className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white dark:bg-palm-900 border border-stone-300 dark:border-palm-700 hover:bg-stone-50 dark:hover:bg-palm-950 text-stone-700 dark:text-stone-300 font-semibold text-sm transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
         >
           {t('backToHome')}
         </Link>

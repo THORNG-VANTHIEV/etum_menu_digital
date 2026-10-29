@@ -12,6 +12,11 @@
   html::-webkit-scrollbar {
     display: none;
   }
+
+  /* Dark form controls and autofill in dark mode */
+  html.dark {
+    color-scheme: dark;
+  }
 }
 
 @layer utilities {

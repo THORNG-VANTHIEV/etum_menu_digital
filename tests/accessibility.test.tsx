@@ -99,7 +99,7 @@ describe('T10 — Accessibility and Usability Verification', () => {
     expect(screen.getByText('អស់ពីស្តុក')).toBeInTheDocument();
   });
 
-  it('ensures header has accessible landmarks and a labelled language toggle', () => {
+  it('ensures header has a banner landmark and labelled toggles', () => {
     render(
       <LanguageProvider>
         <MemoryRouter>
@@ -109,7 +109,8 @@ describe('T10 — Accessibility and Usability Verification', () => {
     );
 
     expect(screen.getByRole('banner')).toBeInTheDocument();
-    expect(screen.getByRole('navigation', { name: /Main navigation/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'អ៊ីទុំ លៀសអប់សៀមរាប – ទំព័រដើម' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'ប្តូរទៅរបៀបងងឹត' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'ប្តូរទៅភាសាអង់គ្លេស (English)' })).toBeInTheDocument();
   });
 });

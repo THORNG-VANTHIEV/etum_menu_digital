@@ -74,7 +74,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
           className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
             activeCategoryId === 'all'
               ? 'bg-amber-800 text-white shadow-xs'
-              : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
+              : 'bg-white dark:bg-palm-900 text-stone-600 dark:text-stone-400 border border-stone-200 dark:border-palm-800 hover:bg-stone-50 dark:hover:bg-palm-950'
           }`}
         >
           {uiTranslations.allCategories[locale]}
@@ -95,7 +95,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
                 isSelected
                   ? 'bg-amber-800 text-white shadow-xs'
-                  : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
+                  : 'bg-white dark:bg-palm-900 text-stone-600 dark:text-stone-400 border border-stone-200 dark:border-palm-800 hover:bg-stone-50 dark:hover:bg-palm-950'
               }`}
             >
               {name}
@@ -105,13 +105,13 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
       </div>
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute left-0 top-0 bottom-2 w-8 bg-gradient-to-r from-stone-50 to-transparent transition-opacity duration-200 ${
+        className={`pointer-events-none absolute left-0 top-0 bottom-2 w-8 bg-gradient-to-r from-stone-50 dark:from-palm-950 to-transparent transition-opacity duration-200 ${
           canScrollLeft ? 'opacity-100' : 'opacity-0'
         }`}
       />
       <div
         aria-hidden="true"
-        className={`pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-stone-50 to-transparent transition-opacity duration-200 ${
+        className={`pointer-events-none absolute right-0 top-0 bottom-2 w-10 bg-gradient-to-l from-stone-50 dark:from-palm-950 to-transparent transition-opacity duration-200 ${
           canScrollRight ? 'opacity-100' : 'opacity-0'
         }`}
       />

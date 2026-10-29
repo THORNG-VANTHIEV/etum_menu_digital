@@ -9,7 +9,7 @@ import Badge from '../src/components/common/Badge';
 import ImageWithFallback from '../src/components/common/ImageWithFallback';
 
 describe('T04 — Branding and Responsive Layout Components', () => {
-  it('renders Header with navigation and branding', () => {
+  it('renders Header with branding, home link and toggles', () => {
     render(
       <LanguageProvider>
         <MemoryRouter>
@@ -18,8 +18,10 @@ describe('T04 — Branding and Responsive Layout Components', () => {
       </LanguageProvider>
     );
     expect(screen.getByText('អ៊ីទុំ លៀសអប់សៀមរាប')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /ទំព័រដើម/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /បញ្ជីមុខម្ហូប/i })).toBeInTheDocument();
+    // The logo is the way home now that the Home/Menu links are gone
+    expect(screen.getByRole('link', { name: /ទំព័រដើម/i })).toHaveAttribute('href', '/');
+    expect(screen.getByRole('button', { name: 'ប្តូរទៅរបៀបងងឹត' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /English/ })).toBeInTheDocument();
   });
 
   it('renders Footer without empty placeholder rows', () => {

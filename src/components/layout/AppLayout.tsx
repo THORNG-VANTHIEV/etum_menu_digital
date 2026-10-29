@@ -20,7 +20,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
 
   return (
     // overflow-x-clip (not hidden) so the sticky header keeps working
-    <div className="min-h-screen flex flex-col bg-stone-50 text-stone-900 font-sans antialiased overflow-x-clip">
+    <div className="min-h-screen flex flex-col bg-stone-50 dark:bg-palm-950 text-stone-900 dark:text-stone-100 font-sans antialiased overflow-x-clip">
       <Header />
       {/* Keyed by path so each newly opened page fades in */}
       <main

@@ -63,24 +63,24 @@ export const ItemDetailsPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Breadcrumb Navigation */}
-      <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs sm:text-sm text-stone-500">
-        <Link to="/" className="hover:text-amber-800 transition-colors">
+      <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs sm:text-sm text-stone-500 dark:text-stone-400">
+        <Link to="/" className="hover:text-amber-800 dark:hover:text-amber-300 transition-colors">
           {t('home')}
         </Link>
         <span aria-hidden="true">/</span>
-        <Link to="/menu" className="hover:text-amber-800 transition-colors">
+        <Link to="/menu" className="hover:text-amber-800 dark:hover:text-amber-300 transition-colors">
           {t('menu')}
         </Link>
         <span aria-hidden="true">/</span>
-        <span className="text-stone-900 font-semibold truncate" aria-current="page">
+        <span className="text-stone-900 dark:text-stone-100 font-semibold truncate" aria-current="page">
           {primaryName}
         </span>
       </nav>
 
       {/* Main Item Card */}
-      <div className="bg-white rounded-3xl border border-stone-200 overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2">
+      <div className="bg-white dark:bg-palm-900 rounded-3xl border border-stone-200 dark:border-palm-800 overflow-hidden shadow-sm grid grid-cols-1 md:grid-cols-2">
         {/* Item Image */}
-        <div className="aspect-[4/3] md:aspect-auto bg-stone-50 relative overflow-hidden flex items-center justify-center p-4 sm:p-8">
+        <div className="aspect-[4/3] md:aspect-auto bg-stone-50 dark:bg-palm-950 relative overflow-hidden flex items-center justify-center p-4 sm:p-8">
           <ImageWithFallback
             src={item.images[0]}
             alt={primaryName}
@@ -97,31 +97,31 @@ export const ItemDetailsPage: React.FC = () => {
         <div className="p-6 sm:p-8 flex flex-col justify-between space-y-6">
           <div className="space-y-4">
             {category && (
-              <span className="inline-block px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200/60 rounded-full text-xs font-semibold">
+              <span className="inline-block px-3 py-1 bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-200 border border-amber-200/60 dark:border-amber-800/60 rounded-full text-xs font-semibold">
                 {categoryName}
               </span>
             )}
 
             <div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
+              <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 dark:text-stone-100 tracking-tight">
                 {primaryName}
               </h1>
               {secondaryName && (
-                <p className="text-sm font-medium text-stone-500 mt-1">
+                <p className="text-sm font-medium text-stone-500 dark:text-stone-400 mt-1">
                   {secondaryName}
                 </p>
               )}
             </div>
 
             {descriptionText && (
-              <p className="text-stone-600 text-sm leading-relaxed">
+              <p className="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
                 {descriptionText}
               </p>
             )}
 
             {/* Variants Selector */}
             {hasVariants && item.variants && (
-              <div className="pt-2 border-t border-stone-100">
+              <div className="pt-2 border-t border-stone-100 dark:border-palm-800">
                 <VariantSelector
                   variants={item.variants}
                   selectedVariantId={selectedVariantId}
@@ -135,17 +135,17 @@ export const ItemDetailsPage: React.FC = () => {
           </div>
 
           {/* Pricing & Availability Footer */}
-          <div className="pt-4 border-t border-stone-200 space-y-3">
+          <div className="pt-4 border-t border-stone-200 dark:border-palm-800 space-y-3">
             <div className="flex items-baseline justify-between">
-              <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">
+              <span className="text-xs font-bold text-stone-500 dark:text-stone-400 uppercase tracking-wider">
                 {t('totalPrice')}
               </span>
               <div className="text-right">
-                <div data-testid="total-price" className="text-2xl sm:text-3xl font-black text-amber-950">
+                <div data-testid="total-price" className="text-2xl sm:text-3xl font-black text-amber-950 dark:text-amber-100">
                   {dualPrice.usd}
                 </div>
                 {dualPrice.khr && (
-                  <div className="text-sm font-bold text-stone-600 mt-0.5">
+                  <div className="text-sm font-bold text-stone-600 dark:text-stone-400 mt-0.5">
                     {dualPrice.khr}
                   </div>
                 )}
@@ -154,12 +154,12 @@ export const ItemDetailsPage: React.FC = () => {
 
             <div>
               {isCurrentSelectionAvailable ? (
-                <div className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center flex items-center justify-center space-x-2">
+                <div className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold text-center flex items-center justify-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                   <span>{t('inStock')}</span>
                 </div>
               ) : (
-                <div className="w-full py-2.5 px-4 rounded-xl bg-stone-100 border border-stone-300 text-stone-700 text-xs font-semibold text-center">
+                <div className="w-full py-2.5 px-4 rounded-xl bg-stone-100 dark:bg-palm-800 border border-stone-300 dark:border-palm-700 text-stone-700 dark:text-stone-300 text-xs font-semibold text-center">
                   {t('variantUnavailableBanner')}
                 </div>
               )}

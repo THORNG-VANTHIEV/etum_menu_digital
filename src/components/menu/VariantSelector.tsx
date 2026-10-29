@@ -22,7 +22,7 @@ export const VariantSelector: React.FC<VariantSelectorProps> = ({
 }) => {
   return (
     <div className="space-y-3">
-      <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
+      <label className="block text-xs font-bold text-stone-700 dark:text-stone-300 uppercase tracking-wider">
         {uiTranslations.selectSize[locale]}
       </label>
 
@@ -60,23 +60,23 @@ export const VariantSelector: React.FC<VariantSelectorProps> = ({
               }}
               className={`p-3.5 rounded-2xl border text-left transition-all active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 relative ${
                 isSelected
-                  ? 'border-amber-600 bg-amber-50/90 text-amber-950 font-semibold ring-2 ring-amber-600 shadow-xs'
+                  ? 'border-amber-600 bg-amber-50/90 dark:bg-amber-950/90 text-amber-950 dark:text-amber-100 font-semibold ring-2 ring-amber-600 shadow-xs'
                   : isAvailable
-                  ? 'border-stone-200 bg-white hover:bg-stone-50 text-stone-800'
-                  : 'border-stone-200 bg-stone-100 text-stone-400 cursor-not-allowed opacity-60'
+                  ? 'border-stone-200 dark:border-palm-800 bg-white dark:bg-palm-900 hover:bg-stone-50 dark:hover:bg-palm-950 text-stone-800 dark:text-stone-200'
+                  : 'border-stone-200 dark:border-palm-800 bg-stone-100 dark:bg-palm-800 text-stone-400 cursor-not-allowed opacity-60'
               }`}
             >
               <div className="flex items-center justify-between">
                 <span className="font-bold text-sm">{variantName}</span>
-                <span className="font-extrabold text-amber-950 text-sm">
+                <span className="font-extrabold text-amber-950 dark:text-amber-100 text-sm">
                   {dualPrice.formatted}
                 </span>
               </div>
 
-              <div className="text-xs text-stone-500 mt-1 flex items-center justify-between">
+              <div className="text-xs text-stone-500 dark:text-stone-400 mt-1 flex items-center justify-between">
                 <span>{subName || ''}</span>
                 {!isAvailable && (
-                  <span className="text-[11px] font-bold text-stone-600 bg-stone-200 px-1.5 py-0.5 rounded">
+                  <span className="text-[11px] font-bold text-stone-600 dark:text-stone-400 bg-stone-200 dark:bg-palm-700 px-1.5 py-0.5 rounded">
                     {!parentAvailable
                       ? (locale === 'km' ? 'អស់ពីស្តុក' : 'Out of Stock')
                       : (locale === 'km' ? 'ទំហំនេះអស់' : 'Unavailable')}

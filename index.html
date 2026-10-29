@@ -5,11 +5,17 @@
     <link rel="icon" type="image/png" href="./images/branding/e_tum_icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-tum LeasAob Siem Reap | អ៊ីទុំ លៀសអប់សៀមរាប</title>
+    <script>
+      // Apply the saved theme before first paint (see src/features/theme/useTheme.ts)
+      try {
+        if (localStorage.getItem('restaurant_menu_theme') === 'dark') document.documentElement.classList.add('dark');
+      } catch (e) {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-gray-50 text-gray-900 antialiased selection:bg-amber-100 selection:text-amber-900">
+  <body class="bg-gray-50 text-gray-900 dark:bg-palm-950 dark:text-stone-100 antialiased selection:bg-amber-100 selection:text-amber-900">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

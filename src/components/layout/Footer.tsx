@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-stone-900 text-stone-300 border-t border-stone-800 mt-auto">
+    <footer className="bg-stone-900 dark:bg-palm-900 text-stone-300 border-t border-stone-800 dark:border-palm-800 mt-auto">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="space-y-1">

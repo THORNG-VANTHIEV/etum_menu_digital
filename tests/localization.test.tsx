@@ -63,7 +63,7 @@ describe('T09 — Bilingual UX & Localization', () => {
     expect(screen.getByTestId('fallback-text')).toHaveTextContent('ឈ្មោះខ្មែរ');
   });
 
-  it('switches language in App and updates Header links and page content', () => {
+  it('switches language in App and updates Header and page content', () => {
     render(
       <LanguageProvider>
         <MemoryRouter initialEntries={['/menu']}>
@@ -77,15 +77,16 @@ describe('T09 — Bilingual UX & Localization', () => {
     );
 
     // Initially in Khmer
-    expect(screen.getByRole('link', { name: 'បញ្ជីមុខម្ហូប' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'បញ្ជីមុខម្ហូប' })).toBeInTheDocument();
 
     // Click the language toggle (shows "EN" while in Khmer)
     const toggle = screen.getByRole('button', { name: /English/ });
     expect(toggle).toHaveTextContent('EN');
     fireEvent.click(toggle);
 
-    // Header link should update to English, and the toggle now offers Khmer
-    expect(screen.getByRole('link', { name: 'Menu' })).toBeInTheDocument();
+    // Page heading and header labels update to English, and the toggle now offers Khmer
+    expect(screen.getByRole('heading', { name: 'Menu' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Switch to dark mode' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /ខ្មែរ/ })).toHaveTextContent('ខ្មែរ');
     // Search placeholder should update to English
     expect(screen.getByPlaceholderText(/Search items\.\.\./i)).toBeInTheDocument();

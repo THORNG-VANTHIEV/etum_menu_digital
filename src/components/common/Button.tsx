@@ -28,9 +28,9 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles: Record<ButtonVariant, string> = {
     primary: 'bg-amber-800 text-white hover:bg-amber-900 shadow-sm',
-    secondary: 'bg-stone-200 text-stone-800 hover:bg-stone-300',
-    outline: 'bg-white border border-stone-300 text-stone-700 hover:bg-stone-50',
-    ghost: 'text-stone-600 hover:text-stone-900 hover:bg-stone-100',
+    secondary: 'bg-stone-200 dark:bg-palm-700 text-stone-800 dark:text-stone-200 hover:bg-stone-300 dark:hover:bg-palm-600',
+    outline: 'bg-white dark:bg-palm-900 border border-stone-300 dark:border-palm-700 text-stone-700 dark:text-stone-300 hover:bg-stone-50 dark:hover:bg-palm-950',
+    ghost: 'text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-palm-800',
   };
 
   return (
