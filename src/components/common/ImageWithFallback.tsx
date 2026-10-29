@@ -4,6 +4,11 @@ interface ImageWithFallbackProps extends React.ImgHTMLAttributes<HTMLImageElemen
   fallbackSrc?: string;
 }
 
+// Menu data stores public assets as root paths ("/images/..."). Resolve them
+// against Vite's base so they also work when deployed under a subpath.
+const resolveAssetUrl = (src: string): string =>
+  src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src;
+
 export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   src,
   alt,
@@ -15,7 +20,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 
   return (
     <img
-      src={hasError || !src ? fallbackSrc : src}
+      src={hasError || !src ? fallbackSrc : resolveAssetUrl(src)}
       alt={alt || ''}
       onError={() => setHasError(true)}
       className={className}

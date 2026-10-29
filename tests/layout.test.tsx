@@ -61,4 +61,10 @@ describe('T04 — Branding and Responsive Layout Components', () => {
     fireEvent.error(img);
     expect(img.src).toContain('espresso.svg');
   });
+
+  it('resolves root image paths against the Vite base URL', () => {
+    render(<ImageWithFallback src="/images/menu/dish.webp" alt="Dish" />);
+    const img = screen.getByAltText('Dish');
+    expect(img.getAttribute('src')).toBe(`${import.meta.env.BASE_URL}images/menu/dish.webp`);
+  });
 });
