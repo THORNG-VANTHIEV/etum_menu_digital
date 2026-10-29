@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from '../src/features/language/LanguageContext';
 import AppLayout from '../src/components/layout/AppLayout';
@@ -85,5 +85,25 @@ describe('T03 — App Shell and Routing', () => {
     );
     expect(screen.getByText(/404/)).toBeInTheDocument();
     expect(screen.getByText(/រកមិនឃើញទំព័រនេះទេ/i)).toBeInTheDocument();
+  });
+
+  it('scrolls to the top when opening a new page', () => {
+    const scrollTo = vi.spyOn(window, 'scrollTo');
+    render(
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="menu" element={<MenuPage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
+    );
+    scrollTo.mockClear();
+    fireEvent.click(screen.getAllByRole('link', { name: /បញ្ជីមុខម្ហូប/i })[0]);
+    expect(scrollTo).toHaveBeenCalledWith(0, 0);
+    scrollTo.mockRestore();
   });
 });

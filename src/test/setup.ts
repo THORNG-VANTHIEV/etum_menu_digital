@@ -12,6 +12,11 @@ if (typeof localStorage === 'undefined' && jsdomInstance) {
   });
 }
 
+// jsdom does not implement window.scrollTo
+if (typeof window !== 'undefined') {
+  window.scrollTo = () => {};
+}
+
 if (typeof window !== 'undefined' && !window.HTMLElement.prototype.scrollIntoView) {
   window.HTMLElement.prototype.scrollIntoView = () => {};
 }
