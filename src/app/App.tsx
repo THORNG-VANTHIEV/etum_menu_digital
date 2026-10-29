@@ -1,15 +1,24 @@
 import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import AppLayout from '../components/layout/AppLayout';
+import HomePage from '../pages/HomePage';
+import MenuPage from '../pages/MenuPage';
+import ItemDetailsPage from '../pages/ItemDetailsPage';
+import NotFoundPage from '../pages/NotFoundPage';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">Restaurant Menu App</h1>
-        <p className="text-gray-600">Initial App Shell Setup</p>
-      </div>
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="menu" element={<MenuPage />} />
+          <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 };
 
 export default App;
-
