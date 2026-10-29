@@ -1,7 +1,7 @@
 export const uiTranslations = {
   appName: {
     km: 'អ៊ីទុំ លៀសអប់សៀមរាប',
-    en: 'E-Tum Siem Reap Clams & Cafe',
+    en: 'E-tum LeasAob Siem Reap',
   },
   appTagline: {
     km: 'Cafe & Restaurant',
