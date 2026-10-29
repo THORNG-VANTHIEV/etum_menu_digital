@@ -1,14 +1,40 @@
+# Dependencies and build output
 node_modules
 dist
 dist-ssr
-*.local
-.DS_Store
 coverage
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment and local overrides
+.env
+.env.*
+*.local
+.claude/settings.local.json
+
+# Editor and OS files
 .idea
 .vscode
-
+.DS_Store
+Thumbs.db
+desktop.ini
 
 # Original PNG sources (kept locally, replaced by .webp in the app)
 public/images/menu/*.png
 public/images/branding/restaurant-banner.png
-leas_hal_e_tum_menu/**/*.png
+/leas_hal_e_tum_menu/
+
+# Unused demo placeholder images (espresso, coca-cola and pure-water are still used)
+public/images/branding/logo.svg
+public/images/menu/cheesecake.svg
+public/images/menu/club-sandwich.svg
+public/images/menu/croissant.svg
+public/images/menu/green-tea.svg
+public/images/menu/iced-latte.svg
+public/images/menu/passion-juice.svg
+
+# One-off AI build prompt, not needed to develop or deploy the app
+/master_prompt.md
