@@ -32,7 +32,7 @@ describe('T03 — App Shell and Routing', () => {
       </MemoryRouter>
     );
     expect(screen.getByText(/បញ្ជីមុខម្ហូប និងភេសជ្ជៈ/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/ស្វែងរក \/ Search item\.\.\./i)).toBeInTheDocument();
+    expect(screen.getByRole('searchbox')).toBeInTheDocument();
   });
 
   it('renders Item Details page for valid slug', () => {
