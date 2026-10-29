@@ -99,7 +99,7 @@ describe('T10 — Accessibility and Usability Verification', () => {
     expect(screen.getByText(/អស់ពីស្តុក/i)).toBeInTheDocument();
   });
 
-  it('ensures header has accessible landmarks and language toggle group', () => {
+  it('ensures header has accessible landmarks and a labelled language toggle', () => {
     render(
       <LanguageProvider>
         <MemoryRouter>
@@ -110,7 +110,7 @@ describe('T10 — Accessibility and Usability Verification', () => {
 
     expect(screen.getByRole('banner')).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: /Main navigation/i })).toBeInTheDocument();
-    expect(screen.getByRole('group', { name: /Language selection/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'ប្តូរទៅភាសាអង់គ្លេស (English)' })).toBeInTheDocument();
   });
 });
 

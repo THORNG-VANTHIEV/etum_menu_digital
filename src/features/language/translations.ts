@@ -15,6 +15,10 @@ export const uiTranslations = {
     km: 'បញ្ជីមុខម្ហូប',
     en: 'Menu',
   },
+  switchLanguage: {
+    km: 'ប្តូរទៅភាសាអង់គ្លេស (English)',
+    en: 'Switch to Khmer (ខ្មែរ)',
+  },
   welcomeBadge: {
     km: 'សូមស្វាគមន៍',
     en: 'Welcome',

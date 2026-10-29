@@ -79,12 +79,14 @@ describe('T09 — Bilingual UX & Localization', () => {
     // Initially in Khmer
     expect(screen.getByRole('link', { name: 'បញ្ជីមុខម្ហូប' })).toBeInTheDocument();
 
-    // Click EN in language switcher
-    const enBtn = screen.getByRole('button', { name: 'EN' });
-    fireEvent.click(enBtn);
+    // Click the language toggle (shows "EN" while in Khmer)
+    const toggle = screen.getByRole('button', { name: /English/ });
+    expect(toggle).toHaveTextContent('EN');
+    fireEvent.click(toggle);
 
-    // Header link should update to English
+    // Header link should update to English, and the toggle now offers Khmer
     expect(screen.getByRole('link', { name: 'Menu' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /ខ្មែរ/ })).toHaveTextContent('ខ្មែរ');
     // Search placeholder should update to English
     expect(screen.getByPlaceholderText(/Search items\.\.\./i)).toBeInTheDocument();
   });
@@ -103,7 +105,7 @@ describe('T09 — Bilingual UX & Localization', () => {
     );
 
     // Switch to EN
-    fireEvent.click(screen.getByRole('button', { name: 'EN' }));
+    fireEvent.click(screen.getByRole('button', { name: /English/ }));
 
     // Heading should show English name
     expect(screen.getByRole('heading', { name: 'Steamed Clams with Spices' })).toBeInTheDocument();

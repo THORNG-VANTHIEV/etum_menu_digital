@@ -56,37 +56,20 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Language Switcher pill */}
-          <div
-            className="inline-flex items-center bg-stone-100 p-0.5 rounded-lg border border-stone-200 text-xs font-semibold flex-shrink-0"
-            role="group"
-            aria-label="Language selection"
+          {/* Language toggle: shows the language it switches to */}
+          <button
+            type="button"
+            onClick={() => setLocale(locale === 'km' ? 'en' : 'km')}
+            aria-label={t('switchLanguage')}
+            title={t('switchLanguage')}
+            className="inline-flex items-center gap-1 px-2 py-1 rounded-lg border border-stone-200 bg-stone-100 text-xs font-bold text-stone-700 whitespace-nowrap flex-shrink-0 hover:bg-white hover:text-stone-900 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
           >
-            <button
-              type="button"
-              onClick={() => setLocale('km')}
-              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
-                locale === 'km'
-                  ? 'bg-white text-stone-900 shadow-xs font-bold'
-                  : 'text-stone-500 hover:text-stone-900'
-              }`}
-              aria-pressed={locale === 'km'}
-            >
-              ខ្មែរ
-            </button>
-            <button
-              type="button"
-              onClick={() => setLocale('en')}
-              className={`px-2 py-1 rounded-md transition-all whitespace-nowrap outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
-                locale === 'en'
-                  ? 'bg-white text-stone-900 shadow-xs font-bold'
-                  : 'text-stone-500 hover:text-stone-900'
-              }`}
-              aria-pressed={locale === 'en'}
-            >
-              EN
-            </button>
-          </div>
+            <svg className="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path strokeLinecap="round" d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+            </svg>
+            <span lang={locale === 'km' ? 'en' : 'km'}>{locale === 'km' ? 'EN' : 'ខ្មែរ'}</span>
+          </button>
         </div>
       </div>
     </header>
