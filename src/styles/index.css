@@ -7,6 +7,8 @@
     font-family: 'Kantumruy Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     /* Hide the page scrollbar; touch, wheel and keyboard scrolling still work */
     scrollbar-width: none;
+    /* Remove the dark box mobile browsers flash behind tapped buttons and links */
+    -webkit-tap-highlight-color: transparent;
   }
 
   html::-webkit-scrollbar {
