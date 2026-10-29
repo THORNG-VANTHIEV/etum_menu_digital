@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { MenuCategory, Locale } from '../../types/menu';
 
 interface CategoryFilterProps {
@@ -14,18 +14,45 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
   onSelectCategory,
   locale = 'km',
 }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const selectedTabRef = useRef<HTMLButtonElement | null>(null);
+
+  // Auto scroll the selected tab into view (centered) whenever activeCategoryId changes
+  useEffect(() => {
+    if (selectedTabRef.current && typeof selectedTabRef.current.scrollIntoView === 'function') {
+      selectedTabRef.current.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [activeCategoryId]);
+
+  const handleTabClick = (categoryId: string, element: HTMLButtonElement) => {
+    onSelectCategory(categoryId);
+    if (typeof element.scrollIntoView === 'function') {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  };
+
   return (
     <div
-      className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none"
+      ref={containerRef}
+      className="flex items-center space-x-2 overflow-x-auto pb-2 scroll-smooth scrollbar-none overscroll-x-contain touch-pan-x"
       role="tablist"
       aria-label="Filter menu items by category"
     >
       <button
+        ref={activeCategoryId === 'all' ? selectedTabRef : null}
         type="button"
         role="tab"
         aria-selected={activeCategoryId === 'all'}
-        onClick={() => onSelectCategory('all')}
-        className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+        onClick={(e) => handleTabClick('all', e.currentTarget)}
+        className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
           activeCategoryId === 'all'
             ? 'bg-amber-800 text-white shadow-xs'
             : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
@@ -41,11 +68,12 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         return (
           <button
             key={cat.id}
+            ref={isSelected ? selectedTabRef : null}
             type="button"
             role="tab"
             aria-selected={isSelected}
-            onClick={() => onSelectCategory(cat.id)}
-            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+            onClick={(e) => handleTabClick(cat.id, e.currentTarget)}
+            className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shrink-0 ${
               isSelected
                 ? 'bg-amber-800 text-white shadow-xs'
                 : 'bg-white text-stone-600 border border-stone-200 hover:bg-stone-50'
@@ -60,4 +88,3 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
 };
 
 export default CategoryFilter;
-
