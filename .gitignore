@@ -11,3 +11,4 @@ coverage
 # Original PNG sources (kept locally, replaced by .webp in the app)
 public/images/menu/*.png
 public/images/branding/restaurant-banner.png
+leas_hal_e_tum_menu/**/*.png
