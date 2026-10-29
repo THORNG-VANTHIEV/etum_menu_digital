@@ -72,7 +72,7 @@ export const HomePage: React.FC = () => {
                 <Link
                   key={item.id}
                   to={`/menu/${item.slug}`}
-                  className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
+                  className="group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col"
                   aria-label={`${primaryName} - ${item.available ? 'Available' : 'Sold Out'}`}
                 >
                   <div className="aspect-[4/3] bg-stone-50 overflow-hidden relative flex items-center justify-center p-2.5 sm:p-3">

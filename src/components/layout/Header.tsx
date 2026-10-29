@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
           <nav className="flex items-center space-x-1" aria-label="Main navigation">
             <Link
               to="/"
-              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isHome
                   ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
             </Link>
             <Link
               to="/menu"
-              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-all active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isMenu
                   ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
             onClick={() => setLocale(locale === 'km' ? 'en' : 'km')}
             aria-label={t('switchLanguage')}
             title={t('switchLanguage')}
-            className="inline-flex items-center gap-1 px-2 py-1 rounded-lg border border-stone-200 bg-stone-100 text-xs font-bold text-stone-700 whitespace-nowrap flex-shrink-0 hover:bg-white hover:text-stone-900 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            className="inline-flex items-center gap-1 px-2 py-1 rounded-lg border border-stone-200 bg-stone-100 text-xs font-bold text-stone-700 whitespace-nowrap flex-shrink-0 hover:bg-white hover:text-stone-900 transition active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
           >
             <svg className="w-3.5 h-3.5 text-stone-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="12" cy="12" r="9" />

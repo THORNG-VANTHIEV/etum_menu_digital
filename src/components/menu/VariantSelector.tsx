@@ -57,7 +57,7 @@ export const VariantSelector: React.FC<VariantSelectorProps> = ({
                   onSelectVariant(variant.id);
                 }
               }}
-              className={`p-3.5 rounded-2xl border text-left transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 relative ${
+              className={`p-3.5 rounded-2xl border text-left transition-all active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 relative ${
                 isSelected
                   ? 'border-amber-600 bg-amber-50/90 text-amber-950 font-semibold ring-2 ring-amber-600 shadow-xs'
                   : isAvailable

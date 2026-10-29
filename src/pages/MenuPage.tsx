@@ -85,21 +85,27 @@ export const MenuPage: React.FC = () => {
             <button
               type="button"
               onClick={handleResetFilters}
-              className="mt-2 inline-flex items-center text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-xl transition-all outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shadow-xs"
+              className="mt-2 inline-flex items-center text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-xl transition-all active:scale-95 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 shadow-xs"
             >
               {t('resetFilters')}
             </button>
           )}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.map((item) => (
-            <MenuCard
+        // Keyed by category so the cards fade in again (staggered) on each category change
+        <div key={activeCategory} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredItems.map((item, index) => (
+            <div
               key={item.id}
-              item={item}
-              locale={locale}
-              currencyConfig={siteConfig.currency}
-            />
+              className="grid motion-safe:animate-fade-in-up"
+              style={{ animationDelay: `${Math.min(index, 8) * 40}ms` }}
+            >
+              <MenuCard
+                item={item}
+                locale={locale}
+                currencyConfig={siteConfig.currency}
+              />
+            </div>
           ))}
         </div>
       )}

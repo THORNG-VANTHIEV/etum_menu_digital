@@ -56,6 +56,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, intervalMs =
             key={slide.id}
             src={slide.src}
             alt=""
+            fadeIn={false}
             loading={index === 0 ? 'eager' : 'lazy'}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out motion-reduce:transition-none ${
               index === activeIndex ? 'opacity-100' : 'opacity-0'

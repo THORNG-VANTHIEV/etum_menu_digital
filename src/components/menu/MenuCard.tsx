@@ -32,7 +32,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
   return (
     <Link
       to={`/menu/${item.slug}`}
-      className={`group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col ${
+      className={`group bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs hover:shadow-md transition-all hover:-translate-y-0.5 active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-amber-500 flex flex-col ${
         !item.available ? 'opacity-85' : ''
       }`}
       aria-label={`${primaryName} - ${priceDisplay} - ${item.available ? 'Available' : 'Unavailable'}`}
