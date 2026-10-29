@@ -103,3 +103,4 @@ export const MenuCard: React.FC<MenuCardProps> = ({
 };
 
 export default MenuCard;
+

@@ -113,3 +113,4 @@ describe('T10 — Accessibility and Usability Verification', () => {
     expect(screen.getByRole('group', { name: /Language selection/i })).toBeInTheDocument();
   });
 });
+

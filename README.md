@@ -166,3 +166,4 @@ The automated GitHub Actions workflow (`.github/workflows/deploy.yml`) is config
 4. `npm run test` — Executes all Vitest unit and component tests.
 5. `npm run build` — Compiles static HTML, CSS, and JS assets into `dist/`.
 6. Deploys to GitHub Pages only when all previous stages pass.
+

@@ -138,3 +138,4 @@ export const uiTranslations = {
 } as const;
 
 export type TranslationKey = keyof typeof uiTranslations;
+
