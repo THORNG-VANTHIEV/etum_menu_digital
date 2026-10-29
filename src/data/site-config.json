@@ -9,7 +9,7 @@
   },
   "branding": {
     "restaurantName": "E-tum LeasAob Siem Reap",
-    "logoPath": "/images/branding/logo.svg",
-    "faviconPath": "/favicon.ico"
+    "logoPath": "/images/branding/e_tum_icon.png",
+    "faviconPath": "/images/branding/e_tum_icon.png"
   }
 }

@@ -7,6 +7,12 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   base: './',
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 1000,
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

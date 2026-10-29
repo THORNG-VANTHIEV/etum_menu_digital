@@ -17,9 +17,9 @@ export const Header: React.FC = () => {
           className="flex items-center space-x-2 sm:space-x-3 text-stone-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1 transition-opacity hover:opacity-90 min-w-0"
         >
           <img
-            src="./images/branding/logo.svg"
+            src="./images/branding/e_tum_icon.png"
             alt="Cafe Logo"
-            className="w-8 h-8 sm:w-9 sm:h-9 object-contain flex-shrink-0"
+            className="w-8 h-8 sm:w-9 sm:h-9 object-contain rounded-full flex-shrink-0 shadow-xs"
           />
           <div className="flex flex-col min-w-0">
             <span className="font-bold text-sm sm:text-lg leading-tight tracking-tight text-amber-950 truncate">
