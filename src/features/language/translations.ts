@@ -95,10 +95,6 @@ export const uiTranslations = {
     km: 'អស់ពីស្តុក',
     en: 'Sold Out',
   },
-  unavailable: {
-    km: 'អស់ពីស្តុក / Unavailable',
-    en: 'Currently Unavailable',
-  },
   inStock: {
     km: 'មានក្នុងហាងស្រាប់',
     en: 'Available in Store',
