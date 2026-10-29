@@ -198,3 +198,4 @@ export const MenuPage: React.FC = () => {
 };
 
 export default MenuPage;
+

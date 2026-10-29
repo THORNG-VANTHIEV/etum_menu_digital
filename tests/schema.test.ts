@@ -178,3 +178,4 @@ describe('T02 — Data Schema and Validation', () => {
     expect(report.warnings.length).toBeGreaterThan(0);
   });
 });
+

@@ -6,6 +6,6 @@ describe('App smoke test', () => {
   it('renders app shell with branding and navigation', () => {
     render(<App />);
     expect(screen.getAllByText('អ៊ីទុំ លៀសអប់សៀមរាប').length).toBeGreaterThan(0);
-    expect(screen.getByRole('link', { name: /បញ្ជីមុខម្ហូប \/ Menu/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'បញ្ជីមុខម្ហូប' })).toBeInTheDocument();
   });
 });

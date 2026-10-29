@@ -65,3 +65,4 @@ export interface ValidationReport {
   errors: ValidationIssue[];
   warnings: ValidationIssue[];
 }
+
