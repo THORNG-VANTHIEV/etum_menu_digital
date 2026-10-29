@@ -3,16 +3,20 @@ import { Link } from 'react-router-dom';
 import { DataService } from '../services/dataService';
 import { useLanguage } from '../features/language/LanguageContext';
 import ImageWithFallback from '../components/common/ImageWithFallback';
+import HeroCarousel from '../components/home/HeroCarousel';
 
 export const HomePage: React.FC = () => {
   const { locale, t, getLocalizedText } = useLanguage();
   const featuredItems = DataService.getFeaturedMenuItems();
+  const heroSlides = featuredItems
+    .filter((item) => item.images.length > 0)
+    .map((item) => ({ id: item.id, src: item.images[0] }));
 
   return (
     <div className="space-y-10">
       {/* Hero Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-800 via-amber-900 to-stone-950 text-white p-8 sm:p-12 shadow-lg">
-        <div className="relative z-10 max-w-2xl space-y-4">
+      <HeroCarousel slides={heroSlides}>
+        <div className="max-w-2xl space-y-4">
           <span className="inline-block px-3 py-1 bg-amber-400/20 text-amber-200 border border-amber-400/30 rounded-full text-xs font-semibold tracking-wide">
             {t('welcomeBadge')}
           </span>
@@ -34,7 +38,7 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
         </div>
-      </section>
+      </HeroCarousel>
 
       {/* Featured Items Preview */}
       {featuredItems.length > 0 && (

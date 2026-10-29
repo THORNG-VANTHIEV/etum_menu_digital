@@ -27,6 +27,22 @@ export const uiTranslations = {
     km: 'លៀស ខ្យង ងាវ បង្កង និងក្ដាម អប់គ្រឿង អប់អំពិលម្ទេស ឬស្ងោរ ព្រមទាំងស្លាបមាន់បំពង សាច់គោជ្រនួចអាំង និងប្រហិត នៅខេត្តសៀមរាប។',
     en: 'Clams, snails, cockles, river prawns and field crabs, steamed with spices or tamarind chili, or boiled, plus fried chicken wings, grilled beef skewers and meatballs in Siem Reap.',
   },
+  heroSlideshow: {
+    km: 'រូបភាពមុខម្ហូបពិសេស',
+    en: 'Featured dishes slideshow',
+  },
+  showSlide: {
+    km: 'បង្ហាញរូបទី',
+    en: 'Show slide',
+  },
+  pauseSlideshow: {
+    km: 'ផ្អាកការបង្ហាញរូបភាព',
+    en: 'Pause slideshow',
+  },
+  playSlideshow: {
+    km: 'បន្តការបង្ហាញរូបភាព',
+    en: 'Play slideshow',
+  },
   viewFullMenu: {
     km: 'មើលបញ្ជីមុខម្ហូបទាំងអស់',
     en: 'View Full Menu',
