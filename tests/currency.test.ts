@@ -72,5 +72,30 @@ describe('T07 — Currency Service', () => {
       expect(result.formatted).toBe('$2.50');
     });
   });
-});
 
+  describe('formatItemPrice', () => {
+    const config = { exchangeRateKhrPerUsd: 4000, roundingRule: 'round_to_100' };
+
+    it('formats a standard price in USD and KHR', () => {
+      expect(CurrencyService.formatItemPrice({ priceUsd: 2.5 }, config)).toEqual({
+        formatted: '$2.50 · ៛10,000',
+        isStartingPrice: false,
+      });
+    });
+
+    it('uses the lowest variant price as a starting price', () => {
+      const variants = [
+        { id: 'l', name: { km: 'ធំ' }, priceUsd: 2.5, available: true },
+        { id: 's', name: { km: 'តូច' }, priceUsd: 1.25, available: true },
+      ];
+      expect(CurrencyService.formatItemPrice({ variants }, config)).toEqual({
+        formatted: '$1.25 · ៛5,000',
+        isStartingPrice: true,
+      });
+    });
+
+    it('returns null when the item has no price', () => {
+      expect(CurrencyService.formatItemPrice({}, config)).toBeNull();
+    });
+  });
+});

@@ -16,8 +16,6 @@ export const MenuCard: React.FC<MenuCardProps> = ({
   locale = 'km',
   currencyConfig,
 }) => {
-  const hasVariants = Array.isArray(item.variants) && item.variants.length > 0;
-
   // Localized title & description with fallback to Khmer
   const primaryName = locale === 'en' && item.name.en ? item.name.en : item.name.km;
   const secondaryName = locale === 'en' ? item.name.km : item.name.en;
@@ -25,25 +23,11 @@ export const MenuCard: React.FC<MenuCardProps> = ({
     ? item.description.en
     : item.description?.km;
 
-  // Price calculation
-  let priceDisplay = '';
-  if (!hasVariants && item.priceUsd !== undefined) {
-    const dual = CurrencyService.formatDualPrice(
-      item.priceUsd,
-      currencyConfig?.exchangeRateKhrPerUsd,
-      currencyConfig?.roundingRule
-    );
-    priceDisplay = dual.formatted;
-  } else if (hasVariants && item.variants) {
-    // Show price starting from lowest variant
-    const minPrice = Math.min(...item.variants.map((v) => v.priceUsd));
-    const dualMin = CurrencyService.formatDualPrice(
-      minPrice,
-      currencyConfig?.exchangeRateKhrPerUsd,
-      currencyConfig?.roundingRule
-    );
-    priceDisplay = `${locale === 'km' ? 'ចាប់ពី' : 'From'} ${dualMin.formatted}`;
-  }
+  // Price (variant items show the lowest variant price as a starting price)
+  const price = CurrencyService.formatItemPrice(item, currencyConfig);
+  const priceDisplay = price
+    ? `${price.isStartingPrice ? `${locale === 'km' ? 'ចាប់ពី' : 'From'} ` : ''}${price.formatted}`
+    : '';
 
   return (
     <Link

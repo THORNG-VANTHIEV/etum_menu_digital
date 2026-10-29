@@ -22,6 +22,8 @@ describe('T03 — App Shell and Routing', () => {
       </LanguageProvider>
     );
     expect(screen.getByText(/លៀសអប់ ខ្យង ងាវ រសជាតិខ្មែរពិតៗ/i)).toBeInTheDocument();
+    // Featured items show the dual USD · KHR price, like the menu cards
+    expect(screen.getAllByText(/\$\d+\.\d{2} · ៛[\d,]+/).length).toBeGreaterThan(0);
   });
 
   it('renders Menu page at /menu route', () => {

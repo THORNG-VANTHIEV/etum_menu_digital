@@ -4,10 +4,12 @@ import { DataService } from '../services/dataService';
 import { useLanguage } from '../features/language/LanguageContext';
 import ImageWithFallback from '../components/common/ImageWithFallback';
 import HeroCarousel from '../components/home/HeroCarousel';
+import { CurrencyService } from '../domain/currency/currencyService';
 
 export const HomePage: React.FC = () => {
   const { locale, t, getLocalizedText } = useLanguage();
   const featuredItems = DataService.getFeaturedMenuItems();
+  const currencyConfig = DataService.getSiteConfig().currency;
   const heroSlides = featuredItems
     .filter((item) => item.images.length > 0)
     .map((item) => ({ id: item.id, src: item.images[0] }));
@@ -57,7 +59,6 @@ export const HomePage: React.FC = () => {
               className="text-xs sm:text-sm font-bold text-amber-800 hover:text-amber-950 transition-colors flex items-center space-x-1"
             >
               <span>{t('viewAll')}</span>
-              <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
 
@@ -65,6 +66,7 @@ export const HomePage: React.FC = () => {
             {featuredItems.map((item) => {
               const primaryName = getLocalizedText(item.name);
               const secondaryName = locale === 'en' ? item.name.km : item.name.en;
+              const price = CurrencyService.formatItemPrice(item, currencyConfig);
 
               return (
                 <Link
@@ -98,7 +100,7 @@ export const HomePage: React.FC = () => {
                     </div>
                     <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs">
                       <span className="font-extrabold text-amber-950 text-sm">
-                        {item.priceUsd !== undefined ? `$${item.priceUsd.toFixed(2)}` : t('hasVariants')}
+                        {price && `${price.isStartingPrice ? `${t('fromPrice')} ` : ''}${price.formatted}`}
                       </span>
                       <span className="text-amber-700 font-bold group-hover:text-amber-950 transition-colors flex items-center space-x-1">
                         <span>{t('viewDetails')}</span>

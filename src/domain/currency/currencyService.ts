@@ -1,4 +1,4 @@
-import type { SiteCurrencyConfig } from '../../types/menu';
+import type { MenuItem, SiteCurrencyConfig } from '../../types/menu';
 
 export type RoundingPolicy = 'none' | 'round_to_100' | 'round_to_500' | 'round_to_1000';
 
@@ -105,6 +105,30 @@ export class CurrencyService {
 
     const formatted = khr ? `${usd} · ${khr}` : usd;
     return { usd, khr, formatted };
+  }
+
+  /**
+   * Formats the price shown on an item card: the standard price, or the lowest
+   * variant price flagged as a starting price ("From ...") for variant items.
+   * Returns null when the item has no price to show.
+   */
+  public static formatItemPrice(
+    item: Pick<MenuItem, 'priceUsd' | 'variants'>,
+    currencyConfig?: Partial<SiteCurrencyConfig> | null
+  ): { formatted: string; isStartingPrice: boolean } | null {
+    const hasVariants = Array.isArray(item.variants) && item.variants.length > 0;
+    const priceUsd = hasVariants
+      ? Math.min(...item.variants!.map((variant) => variant.priceUsd))
+      : item.priceUsd;
+    if (priceUsd === undefined) {
+      return null;
+    }
+    const { formatted } = this.formatDualPrice(
+      priceUsd,
+      currencyConfig?.exchangeRateKhrPerUsd,
+      currencyConfig?.roundingRule
+    );
+    return { formatted, isStartingPrice: hasVariants };
   }
 }
 
