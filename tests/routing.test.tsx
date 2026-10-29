@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from '../src/features/language/LanguageContext';
 import AppLayout from '../src/components/layout/AppLayout';
 import HomePage from '../src/pages/HomePage';
 import MenuPage from '../src/pages/MenuPage';
@@ -10,70 +11,79 @@ import NotFoundPage from '../src/pages/NotFoundPage';
 describe('T03 — App Shell and Routing', () => {
   it('renders Home page at root route', () => {
     render(
-      <MemoryRouter initialEntries={['/']}>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route index element={<HomePage />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route index element={<HomePage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
     expect(screen.getByText(/រសជាតិពិតនៃម្ហូប និងភេសជ្ជៈខ្មែរ/i)).toBeInTheDocument();
   });
 
   it('renders Menu page at /menu route', () => {
     render(
-      <MemoryRouter initialEntries={['/menu']}>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route path="menu" element={<MenuPage />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route path="menu" element={<MenuPage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
-    expect(screen.getByText(/បញ្ជីមុខម្ហូប និងភេសជ្ជៈ/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /បញ្ជីមុខម្ហូប/i })).toBeInTheDocument();
     expect(screen.getByRole('searchbox')).toBeInTheDocument();
   });
 
   it('renders Item Details page for valid slug', () => {
     render(
-      <MemoryRouter initialEntries={['/menu/espresso']}>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route path="menu/:slug" element={<ItemDetailsPage />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/espresso']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route path="menu/:slug" element={<ItemDetailsPage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
-    // Should render Espresso details
     expect(screen.getByRole('heading', { name: 'កាហ្វេអេសប្រេសសូ' })).toBeInTheDocument();
     expect(screen.getByText('$2.00')).toBeInTheDocument();
   });
 
   it('renders Not Found page for invalid slug under /menu/:slug', () => {
     render(
-      <MemoryRouter initialEntries={['/menu/non-existent-dish']}>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route path="menu/:slug" element={<ItemDetailsPage />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/non-existent-dish']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route path="menu/:slug" element={<ItemDetailsPage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
-    expect(screen.getByText(/រកមិនឃើញមុខម្ហូបនេះទេ/i)).toBeInTheDocument();
+    expect(screen.getByText(/រកមិនឃើញទំព័រនេះទេ/i)).toBeInTheDocument();
   });
 
   it('renders NotFoundPage on unknown root route', () => {
     render(
-      <MemoryRouter initialEntries={['/some/unknown/route']}>
-        <Routes>
-          <Route path="/" element={<AppLayout />}>
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/some/unknown/route']}>
+          <Routes>
+            <Route path="/" element={<AppLayout />}>
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
     expect(screen.getByText(/404/)).toBeInTheDocument();
-    expect(screen.getByText(/Page Not Found/i)).toBeInTheDocument();
+    expect(screen.getByText(/រកមិនឃើញទំព័រនេះទេ/i)).toBeInTheDocument();
   });
 });

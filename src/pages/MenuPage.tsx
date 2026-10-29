@@ -5,8 +5,10 @@ import CategoryFilter from '../components/menu/CategoryFilter';
 import SearchBar from '../components/menu/SearchBar';
 import MenuCard from '../components/menu/MenuCard';
 import { filterMenuItems } from '../features/menu-search/searchUtils';
+import { useLanguage } from '../features/language/LanguageContext';
 
 export const MenuPage: React.FC = () => {
+  const { locale, t } = useLanguage();
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get('category') || 'all';
   const [searchTerm, setSearchTerm] = useState('');
@@ -19,9 +21,9 @@ export const MenuPage: React.FC = () => {
     return filterMenuItems(allItems, {
       category: activeCategory,
       searchTerm,
-      locale: 'km',
+      locale,
     });
-  }, [allItems, activeCategory, searchTerm]);
+  }, [allItems, activeCategory, searchTerm, locale]);
 
   const handleCategorySelect = (categoryId: string) => {
     if (categoryId === 'all') {
@@ -42,18 +44,18 @@ export const MenuPage: React.FC = () => {
       {/* Header with Title and Search Bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
-            បញ្ជីមុខម្ហូប និងភេសជ្ជៈ
+          <h1 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
+            {t('menu')}
           </h1>
           <p className="text-xs sm:text-sm text-stone-500 mt-1">
-            Menu & Refreshing Beverages
+            {locale === 'km' ? 'បញ្ជីមុខម្ហូប និងភេសជ្ជៈស្រស់ៗ' : 'Full Menu & Beverage Selection'}
           </p>
         </div>
 
         <SearchBar
           value={searchTerm}
           onChange={setSearchTerm}
-          locale="km"
+          locale={locale}
         />
       </div>
 
@@ -62,7 +64,7 @@ export const MenuPage: React.FC = () => {
         categories={categories}
         activeCategoryId={activeCategory}
         onSelectCategory={handleCategorySelect}
-        locale="km"
+        locale={locale}
       />
 
       {/* Items Grid or Empty State */}
@@ -74,10 +76,10 @@ export const MenuPage: React.FC = () => {
             </svg>
           </div>
           <h2 className="text-base sm:text-lg font-bold text-stone-800">
-            រកមិនឃើញមុខម្ហូបទេ
+            {t('noItemsFound')}
           </h2>
           <p className="text-xs sm:text-sm text-stone-500 max-w-sm mx-auto">
-            ពុំមានមុខម្ហូបដែលត្រូវនឹងលក្ខខណ្ឌស្វែងរក ឬប្រភេទដែលបានជ្រើសរើសឡើយ។
+            {t('noItemsFoundDesc')}
           </p>
           {(searchTerm !== '' || activeCategory !== 'all') && (
             <button
@@ -85,7 +87,7 @@ export const MenuPage: React.FC = () => {
               onClick={handleResetFilters}
               className="mt-2 inline-flex items-center text-xs font-semibold text-amber-800 hover:text-amber-900 underline underline-offset-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded p-1"
             >
-              កំណត់ការស្វែងរកឡើងវិញ (Reset Filters)
+              {t('resetFilters')}
             </button>
           )}
         </div>
@@ -95,7 +97,7 @@ export const MenuPage: React.FC = () => {
             <MenuCard
               key={item.id}
               item={item}
-              locale="km"
+              locale={locale}
               currencyConfig={siteConfig.currency}
             />
           ))}

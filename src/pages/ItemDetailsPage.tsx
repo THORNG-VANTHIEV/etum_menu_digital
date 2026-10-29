@@ -5,9 +5,11 @@ import NotFoundPage from './NotFoundPage';
 import VariantSelector from '../components/menu/VariantSelector';
 import ImageWithFallback from '../components/common/ImageWithFallback';
 import { CurrencyService } from '../domain/currency/currencyService';
+import { useLanguage } from '../features/language/LanguageContext';
 
 export const ItemDetailsPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { locale, t, getLocalizedText } = useLanguage();
   const item = slug ? DataService.getMenuItemBySlug(slug) : undefined;
   const siteConfig = useMemo(() => DataService.getSiteConfig(), []);
 
@@ -27,8 +29,8 @@ export const ItemDetailsPage: React.FC = () => {
   if (!item) {
     return (
       <NotFoundPage
-        title="រកមិនឃើញមុខម្ហូបនេះទេ"
-        message={`មុខម្ហូបដែលមានតំណ "${slug}" មិនមាននៅក្នុងប្រព័ន្ធឡើយ។`}
+        title={t('pageNotFoundTitle')}
+        message={t('pageNotFoundMessage')}
       />
     );
   }
@@ -50,20 +52,28 @@ export const ItemDetailsPage: React.FC = () => {
     siteConfig.currency.roundingRule
   );
 
+  const primaryName = getLocalizedText(item.name);
+  const secondaryName = locale === 'en' ? item.name.km : item.name.en;
+  const descriptionText = locale === 'en' && item.description?.en
+    ? item.description.en
+    : item.description?.km;
+
+  const categoryName = category ? getLocalizedText(category.name) : '';
+
   return (
     <div className="space-y-6 max-w-4xl mx-auto">
       {/* Breadcrumb Navigation */}
       <nav aria-label="Breadcrumb" className="flex items-center space-x-2 text-xs sm:text-sm text-stone-500">
         <Link to="/" className="hover:text-amber-800 transition-colors">
-          ទំព័រដើម (Home)
+          {t('home')}
         </Link>
-        <span>/</span>
+        <span aria-hidden="true">/</span>
         <Link to="/menu" className="hover:text-amber-800 transition-colors">
-          បញ្ជីមុខម្ហូប (Menu)
+          {t('menu')}
         </Link>
-        <span>/</span>
+        <span aria-hidden="true">/</span>
         <span className="text-stone-900 font-semibold truncate" aria-current="page">
-          {item.name.km}
+          {primaryName}
         </span>
       </nav>
 
@@ -73,13 +83,12 @@ export const ItemDetailsPage: React.FC = () => {
         <div className="aspect-[4/3] md:aspect-auto bg-stone-100 relative overflow-hidden">
           <ImageWithFallback
             src={item.images[0]}
-            alt={item.name.km}
+            alt={primaryName}
             className="w-full h-full object-cover"
           />
           {!isParentAvailable && (
             <div className="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow backdrop-blur flex items-center space-x-1.5">
-              <span>⚠️</span>
-              <span>អស់ពីស្តុកបណ្តោះអាសន្ន (Out of Stock)</span>
+              <span>{t('itemUnavailableBanner')}</span>
             </div>
           )}
         </div>
@@ -89,24 +98,24 @@ export const ItemDetailsPage: React.FC = () => {
           <div className="space-y-4">
             {category && (
               <span className="inline-block px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200/60 rounded-full text-xs font-semibold">
-                {category.name.km} {category.name.en ? `· ${category.name.en}` : ''}
+                {categoryName}
               </span>
             )}
 
             <div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-stone-900 tracking-tight">
-                {item.name.km}
+                {primaryName}
               </h1>
-              {item.name.en && (
+              {secondaryName && (
                 <p className="text-sm font-medium text-stone-500 mt-1">
-                  {item.name.en}
+                  {secondaryName}
                 </p>
               )}
             </div>
 
-            {item.description && (
+            {descriptionText && (
               <p className="text-stone-600 text-sm leading-relaxed">
-                {item.description.km}
+                {descriptionText}
               </p>
             )}
 
@@ -118,7 +127,7 @@ export const ItemDetailsPage: React.FC = () => {
                   selectedVariantId={selectedVariantId}
                   onSelectVariant={setSelectedVariantId}
                   parentAvailable={isParentAvailable}
-                  locale="km"
+                  locale={locale}
                   currencyConfig={siteConfig.currency}
                 />
               </div>
@@ -129,7 +138,7 @@ export const ItemDetailsPage: React.FC = () => {
           <div className="pt-4 border-t border-stone-200 space-y-3">
             <div className="flex items-baseline justify-between">
               <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">
-                តម្លៃសរុប (Price):
+                {t('totalPrice')}
               </span>
               <div className="text-right">
                 <div data-testid="total-price" className="text-2xl sm:text-3xl font-black text-amber-950">
@@ -147,11 +156,11 @@ export const ItemDetailsPage: React.FC = () => {
               {isCurrentSelectionAvailable ? (
                 <div className="w-full py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center flex items-center justify-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                  <span>មានក្នុងស្តុកស្រាប់ (In Stock & Available)</span>
+                  <span>{t('inStock')}</span>
                 </div>
               ) : (
                 <div className="w-full py-2.5 px-4 rounded-xl bg-stone-100 border border-stone-300 text-stone-700 text-xs font-semibold text-center">
-                  ⚠️ មុខម្ហូបនេះអស់ពីស្តុកហើយ (Currently Unavailable)
+                  {t('variantUnavailableBanner')}
                 </div>
               )}
             </div>

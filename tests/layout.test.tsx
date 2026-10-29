@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import { LanguageProvider } from '../src/features/language/LanguageContext';
 import Header from '../src/components/layout/Header';
 import Footer from '../src/components/layout/Footer';
 import Button from '../src/components/common/Button';
@@ -10,9 +11,11 @@ import ImageWithFallback from '../src/components/common/ImageWithFallback';
 describe('T04 — Branding and Responsive Layout Components', () => {
   it('renders Header with navigation and branding', () => {
     render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter>
+          <Header />
+        </MemoryRouter>
+      </LanguageProvider>
     );
     expect(screen.getByText('អ៊ីទុំ លៀសអប់សៀមរាប')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /ទំព័រដើម/i })).toBeInTheDocument();
@@ -20,7 +23,11 @@ describe('T04 — Branding and Responsive Layout Components', () => {
   });
 
   it('renders Footer without empty placeholder rows', () => {
-    render(<Footer currentLocale="km" />);
+    render(
+      <LanguageProvider>
+        <Footer />
+      </LanguageProvider>
+    );
     expect(screen.getByText(/ក្រុងសៀមរាប/i)).toBeInTheDocument();
   });
 
@@ -55,4 +62,3 @@ describe('T04 — Branding and Responsive Layout Components', () => {
     expect(img.src).toContain('espresso.svg');
   });
 });
-

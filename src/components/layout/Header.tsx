@@ -1,15 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '../../features/language/LanguageContext';
 
-interface HeaderProps {
-  currentLocale?: 'km' | 'en';
-  onLocaleChange?: (locale: 'km' | 'en') => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({
-  currentLocale = 'km',
-  onLocaleChange,
-}) => {
+export const Header: React.FC = () => {
+  const { locale, setLocale, t } = useLanguage();
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isMenu = location.pathname.startsWith('/menu');
@@ -29,10 +23,10 @@ export const Header: React.FC<HeaderProps> = ({
           />
           <div className="flex flex-col">
             <span className="font-bold text-base sm:text-lg leading-tight tracking-tight text-amber-950">
-              អ៊ីទុំ លៀសអប់សៀមរាប
+              {t('appName')}
             </span>
             <span className="text-[11px] text-stone-500">
-              Cafe & Restaurant
+              {t('appTagline')}
             </span>
           </div>
         </Link>
@@ -44,21 +38,21 @@ export const Header: React.FC<HeaderProps> = ({
               to="/"
               className={`px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isHome
-                  ? 'bg-amber-100/80 text-amber-950'
+                  ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
-              {currentLocale === 'km' ? 'ទំព័រដើម' : 'Home'}
+              {t('home')}
             </Link>
             <Link
               to="/menu"
               className={`px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
                 isMenu
-                  ? 'bg-amber-100/80 text-amber-950'
+                  ? 'bg-amber-100/80 text-amber-950 font-bold'
                   : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
               }`}
             >
-              {currentLocale === 'km' ? 'បញ្ជីមុខម្ហូប' : 'Menu'}
+              {t('menu')}
             </Link>
           </nav>
 
@@ -70,25 +64,25 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <button
               type="button"
-              onClick={() => onLocaleChange && onLocaleChange('km')}
+              onClick={() => setLocale('km')}
               className={`px-2 py-1 rounded-md transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
-                currentLocale === 'km'
+                locale === 'km'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
                   : 'text-stone-500 hover:text-stone-900'
               }`}
-              aria-pressed={currentLocale === 'km'}
+              aria-pressed={locale === 'km'}
             >
               ខ្មែរ
             </button>
             <button
               type="button"
-              onClick={() => onLocaleChange && onLocaleChange('en')}
+              onClick={() => setLocale('en')}
               className={`px-2 py-1 rounded-md transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
-                currentLocale === 'en'
+                locale === 'en'
                   ? 'bg-white text-stone-900 shadow-xs font-bold'
                   : 'text-stone-500 hover:text-stone-900'
               }`}
-              aria-pressed={currentLocale === 'en'}
+              aria-pressed={locale === 'en'}
             >
               EN
             </button>
@@ -100,4 +94,3 @@ export const Header: React.FC<HeaderProps> = ({
 };
 
 export default Header;
-

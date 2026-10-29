@@ -1,45 +1,52 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from '../src/features/language/LanguageContext';
 import ItemDetailsPage from '../src/pages/ItemDetailsPage';
 
 describe('T08 — Details Pages and Variants', () => {
   it('renders standard-price item details for valid slug', () => {
     render(
-      <MemoryRouter initialEntries={['/menu/espresso']}>
-        <Routes>
-          <Route path="menu/:slug" element={<ItemDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/espresso']}>
+          <Routes>
+            <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
 
     expect(screen.getByRole('heading', { name: 'កាហ្វេអេសប្រេសសូ' })).toBeInTheDocument();
     expect(screen.getByText('Espresso')).toBeInTheDocument();
-    expect(screen.getByText('$2.00')).toBeInTheDocument();
+    expect(screen.getByTestId('total-price')).toHaveTextContent('$2.00');
     expect(screen.getByText(/មានក្នុងស្តុកស្រាប់/i)).toBeInTheDocument();
   });
 
   it('renders Not Found for non-existent item slug', () => {
     render(
-      <MemoryRouter initialEntries={['/menu/non-existent-dish-xyz']}>
-        <Routes>
-          <Route path="menu/:slug" element={<ItemDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/non-existent-dish-xyz']}>
+          <Routes>
+            <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
 
-    expect(screen.getByText(/រកមិនឃើញមុខម្ហូបនេះទេ/i)).toBeInTheDocument();
+    expect(screen.getByText(/រកមិនឃើញទំព័រនេះទេ/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /ត្រឡប់ទៅកាន់បញ្ជីមុខម្ហូប/i })).toBeInTheDocument();
   });
 
   it('renders variant options and updates price when another variant is selected', () => {
     // Iced Latte has Regular ($2.75) and Large ($3.50)
     render(
-      <MemoryRouter initialEntries={['/menu/iced-latte']}>
-        <Routes>
-          <Route path="menu/:slug" element={<ItemDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/iced-latte']}>
+          <Routes>
+            <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
 
     expect(screen.getByRole('heading', { name: 'ឡាតេទឹកកក' })).toBeInTheDocument();
@@ -60,11 +67,13 @@ describe('T08 — Details Pages and Variants', () => {
   it('disables all variants when parent item is unavailable', () => {
     // Passion juice (item-passion-juice) is unavailable at parent level
     render(
-      <MemoryRouter initialEntries={['/menu/passion-juice']}>
-        <Routes>
-          <Route path="menu/:slug" element={<ItemDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/passion-juice']}>
+          <Routes>
+            <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
 
     expect(screen.getByRole('heading', { name: 'ទឹកក្រូចឆ្មារផាសិន' })).toBeInTheDocument();
@@ -80,11 +89,13 @@ describe('T08 — Details Pages and Variants', () => {
   it('prevents selecting an unavailable variant when parent is available', () => {
     // Green Tea: Hot is available ($2.25), Cold is unavailable ($2.75)
     render(
-      <MemoryRouter initialEntries={['/menu/green-tea']}>
-        <Routes>
-          <Route path="menu/:slug" element={<ItemDetailsPage />} />
-        </Routes>
-      </MemoryRouter>
+      <LanguageProvider>
+        <MemoryRouter initialEntries={['/menu/green-tea']}>
+          <Routes>
+            <Route path="menu/:slug" element={<ItemDetailsPage />} />
+          </Routes>
+        </MemoryRouter>
+      </LanguageProvider>
     );
 
     const hotRadio = screen.getByRole('radio', { name: /ក្តៅ/i });
