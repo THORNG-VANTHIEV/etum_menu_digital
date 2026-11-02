@@ -388,22 +388,76 @@
     "priceUsd": 2.5
   },
   {
+    "id": "item-bay-sor",
+    "slug": "bay-sor",
+    "name": {
+      "km": "បាយស",
+      "en": "Steamed White Rice"
+    },
+    "description": {
+      "km": "បាយសក្តៅៗ សម្រាប់ញ៉ាំជាមួយម្ហូប",
+      "en": "Hot steamed white rice to enjoy with your dishes"
+    },
+    "categoryId": "cat-rice",
+    "images": [
+      "/images/menu/steamed-rice.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.25
+  },
+  {
+    "id": "item-teuk-ampov-keo",
+    "slug": "teuk-ampov-keo",
+    "name": {
+      "km": "ទឹកអំពៅមួយកែវ",
+      "en": "Sugarcane Juice (Glass)"
+    },
+    "description": {
+      "km": "ទឹកអំពៅមួយកែវ ជាមួយទឹកកកត្រជាក់",
+      "en": "A glass of sugarcane juice served over ice"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/sugarcane-juice-glass.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.625
+  },
+  {
+    "id": "item-teuk-ampov-dob",
+    "slug": "teuk-ampov-dob",
+    "name": {
+      "km": "ទឹកអំពៅមួយដប",
+      "en": "Sugarcane Juice (Bottle)"
+    },
+    "description": {
+      "km": "ទឹកអំពៅមួយដប ងាយស្រួលយកទៅតាមខ្លួន",
+      "en": "A bottle of sugarcane juice, easy to take away"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/sugarcane-juice-bottle.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
     "id": "item-teuk-borisot",
     "slug": "teuk-borisot",
     "name": {
-      "km": "ទឹកបរិសុទ្ធ",
+      "km": "ទឹកសុទ្ធ",
       "en": "Pure Drinking Water"
     },
     "description": {
-      "km": "ទឹកបរិសុទ្ធត្រជាក់ស្រស់ថ្លា បំបាត់ការស្រេកទឹក",
+      "km": "ទឹកសុទ្ធត្រជាក់ស្រស់ថ្លា បំបាត់ការស្រេកទឹក",
       "en": "Refreshing chilled bottled drinking water"
     },
     "categoryId": "cat-beverages",
     "images": [
-      "/images/menu/pure-water.svg"
+      "/images/menu/pure-water.webp"
     ],
     "available": true,
-    "priceUsd": 0.5
+    "priceUsd": 0.25
   },
   {
     "id": "item-coca-cola",
@@ -418,9 +472,189 @@
     },
     "categoryId": "cat-beverages",
     "images": [
-      "/images/menu/coca-cola.svg"
+      "/images/menu/coca-cola.webp"
     ],
     "available": true,
-    "priceUsd": 0.625
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-sting-yellow",
+    "slug": "sting-yellow",
+    "name": {
+      "km": "Sting លឿង",
+      "en": "Sting Yellow"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Sting ត្រជាក់ៗ",
+      "en": "Chilled Sting energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/sting-yellow.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-sting-red",
+    "slug": "sting-red",
+    "name": {
+      "km": "Sting ក្រហម",
+      "en": "Sting Red"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Sting ត្រជាក់ៗ",
+      "en": "Chilled Sting energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/sting-red.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-champion",
+    "slug": "champion",
+    "name": {
+      "km": "Champion",
+      "en": "Champion"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Champion ត្រជាក់ៗ",
+      "en": "Chilled Champion energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/champion.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.875
+  },
+  {
+    "id": "item-exprez",
+    "slug": "exprez",
+    "name": {
+      "km": "Exprez",
+      "en": "Exprez"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Exprez ត្រជាក់ៗ",
+      "en": "Chilled Exprez energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/exprez.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-samurai",
+    "slug": "samurai",
+    "name": {
+      "km": "Samurai",
+      "en": "Samurai"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Samurai ត្រជាក់ៗ",
+      "en": "Chilled Samurai energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/samurai.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-idol",
+    "slug": "idol",
+    "name": {
+      "km": "Idol",
+      "en": "Idol"
+    },
+    "description": {
+      "km": "ភេសជ្ជៈប៉ូវកម្លាំង Idol ត្រជាក់ៗ",
+      "en": "Chilled Idol energy drink"
+    },
+    "categoryId": "cat-beverages",
+    "images": [
+      "/images/menu/idol.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-ganzberg",
+    "slug": "ganzberg",
+    "name": {
+      "km": "Ganzberg",
+      "en": "Ganzberg"
+    },
+    "description": {
+      "km": "ស្រាបៀរ Ganzberg ត្រជាក់ៗ",
+      "en": "Chilled Ganzberg beer"
+    },
+    "categoryId": "cat-beer",
+    "images": [
+      "/images/menu/ganzberg.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-hanuman",
+    "slug": "hanuman",
+    "name": {
+      "km": "Hanuman",
+      "en": "Hanuman"
+    },
+    "description": {
+      "km": "ស្រាបៀរ Hanuman ត្រជាក់ៗ",
+      "en": "Chilled Hanuman beer"
+    },
+    "categoryId": "cat-beer",
+    "images": [
+      "/images/menu/hanuman.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
+  },
+  {
+    "id": "item-hanuman-black",
+    "slug": "hanuman-black",
+    "name": {
+      "km": "Hanuman Black",
+      "en": "Hanuman Black"
+    },
+    "description": {
+      "km": "ស្រាបៀរ Hanuman Black ត្រជាក់ៗ",
+      "en": "Chilled Hanuman Black beer"
+    },
+    "categoryId": "cat-beer",
+    "images": [
+      "/images/menu/hanuman-black.webp"
+    ],
+    "available": true,
+    "priceUsd": 1.125
+  },
+  {
+    "id": "item-cambodia-beer",
+    "slug": "cambodia-beer",
+    "name": {
+      "km": "Cambodia",
+      "en": "Cambodia"
+    },
+    "description": {
+      "km": "ស្រាបៀរ Cambodia ត្រជាក់ៗ",
+      "en": "Chilled Cambodia beer"
+    },
+    "categoryId": "cat-beer",
+    "images": [
+      "/images/menu/cambodia-beer.webp"
+    ],
+    "available": true,
+    "priceUsd": 0.75
   }
 ]

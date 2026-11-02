@@ -40,13 +40,33 @@
     "active": true
   },
   {
+    "id": "cat-rice",
+    "slug": "rice",
+    "name": {
+      "km": "បាយ",
+      "en": "Rice"
+    },
+    "sortOrder": 5,
+    "active": true
+  },
+  {
     "id": "cat-beverages",
     "slug": "beverages",
     "name": {
       "km": "ភេសជ្ជៈ",
       "en": "Beverages"
     },
-    "sortOrder": 5,
+    "sortOrder": 6,
+    "active": true
+  },
+  {
+    "id": "cat-beer",
+    "slug": "beer",
+    "name": {
+      "km": "ស្រាបៀរ",
+      "en": "Beer"
+    },
+    "sortOrder": 7,
     "active": true
   }
 ]
