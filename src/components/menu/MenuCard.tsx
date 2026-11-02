@@ -39,7 +39,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
       aria-label={`${primaryName} - ${priceDisplay} - ${item.available ? 'Available' : 'Unavailable'}`}
     >
       {/* Thumbnail */}
-      <div className="aspect-[16/10] bg-stone-50 dark:bg-palm-950 overflow-hidden relative flex items-center justify-center p-2 sm:p-3">
+      <div className="aspect-[4/3] sm:aspect-[16/10] bg-stone-50 dark:bg-palm-950 overflow-hidden relative flex items-center justify-center p-1.5 sm:p-3">
         <ImageWithFallback
           src={item.images[0]}
           alt={primaryName}
@@ -55,9 +55,9 @@ export const MenuCard: React.FC<MenuCardProps> = ({
       </div>
 
       {/* Card Content */}
-      <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+      <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
         <div className="space-y-1">
-          <h2 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-900 dark:group-hover:text-amber-200 transition-colors text-base leading-snug">
+          <h2 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-900 dark:group-hover:text-amber-200 transition-colors text-sm sm:text-base leading-snug">
             {primaryName}
           </h2>
           {secondaryName && (
@@ -66,7 +66,7 @@ export const MenuCard: React.FC<MenuCardProps> = ({
             </p>
           )}
           {descriptionText && (
-            <p className="text-xs text-stone-600 dark:text-stone-400 line-clamp-2 pt-1 leading-relaxed">
+            <p className="max-sm:hidden text-xs text-stone-600 dark:text-stone-400 line-clamp-2 pt-1 leading-relaxed">
               {descriptionText}
             </p>
           )}
@@ -74,10 +74,10 @@ export const MenuCard: React.FC<MenuCardProps> = ({
 
         {/* Price & Action Footer */}
         <div className="pt-2 border-t border-stone-100 dark:border-palm-800 flex items-center justify-between text-xs">
-          <span className="font-extrabold text-amber-950 dark:text-amber-100 text-sm">
+          <span className="font-extrabold text-amber-950 dark:text-amber-100 text-[13px] sm:text-sm">
             {priceDisplay}
           </span>
-          <span className="font-bold text-amber-700 dark:text-amber-400 group-hover:text-amber-950 dark:group-hover:text-amber-100 flex items-center space-x-1 transition-colors">
+          <span className="max-sm:hidden font-bold text-amber-700 dark:text-amber-400 group-hover:text-amber-950 dark:group-hover:text-amber-100 flex items-center space-x-1 transition-colors">
             <span>{uiTranslations.viewDetails[locale]}</span>
           </span>
         </div>

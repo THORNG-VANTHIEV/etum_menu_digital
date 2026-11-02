@@ -62,7 +62,7 @@ export const HomePage: React.FC = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
             {featuredItems.map((item) => {
               const primaryName = getLocalizedText(item.name);
               const secondaryName = locale === 'en' ? item.name.km : item.name.en;
@@ -87,9 +87,9 @@ export const HomePage: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <div className="p-4 space-y-1 flex-1 flex flex-col justify-between">
+                  <div className="p-3 sm:p-4 space-y-1 flex-1 flex flex-col justify-between">
                     <div>
-                      <h3 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-900 dark:group-hover:text-amber-200 transition-colors text-base">
+                      <h3 className="font-bold text-stone-900 dark:text-stone-100 group-hover:text-amber-900 dark:group-hover:text-amber-200 transition-colors text-sm sm:text-base leading-snug">
                         {primaryName}
                       </h3>
                       {secondaryName && (
@@ -98,11 +98,11 @@ export const HomePage: React.FC = () => {
                         </p>
                       )}
                     </div>
-                    <div className="pt-3 border-t border-stone-100 dark:border-palm-800 flex items-center justify-between text-xs">
-                      <span className="font-extrabold text-amber-950 dark:text-amber-100 text-sm">
+                    <div className="pt-2 sm:pt-3 border-t border-stone-100 dark:border-palm-800 flex items-center justify-between text-xs">
+                      <span className="font-extrabold text-amber-950 dark:text-amber-100 text-[13px] sm:text-sm">
                         {price && `${price.isStartingPrice ? `${t('fromPrice')} ` : ''}${price.formatted}`}
                       </span>
-                      <span className="text-amber-700 dark:text-amber-400 font-bold group-hover:text-amber-950 dark:group-hover:text-amber-100 transition-colors flex items-center space-x-1">
+                      <span className="max-sm:hidden text-amber-700 dark:text-amber-400 font-bold group-hover:text-amber-950 dark:group-hover:text-amber-100 transition-colors flex items-center space-x-1">
                         <span>{t('viewDetails')}</span>
                       </span>
                     </div>
